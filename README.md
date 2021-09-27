@@ -28,3 +28,6 @@
 
 ## マーケット
 - キャンプ初心者 ~ 中級者
+
+## 画面遷移図
+https://www.figma.com/file/kGUOYyP74oq5MfZVxILTlj/CampHood?node-id=0%3A1
