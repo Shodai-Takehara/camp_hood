@@ -31,3 +31,6 @@
 
 ## 画面遷移図
 https://www.figma.com/file/kGUOYyP74oq5MfZVxILTlj/CampHood?node-id=0%3A1
+
+## ER図
+https://drive.google.com/file/d/106BTrt-8a6QtulIehp40b9jQXlEefhxw/view?usp=sharing
