@@ -16,18 +16,13 @@
             <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to "#", class: "nav-link" do %>
+            <%= link_to "#", class: "nav-link", 'data-turbolinks': false do %>
               <i class="fas fa-campground"></i> キャンプ場一覧
             <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to "#", class: "nav-link" do %>
-              <i class="fas fa-user"></i> マイリスト
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to logout_path, method: :delete, class: "nav-link" do %>
-              <i class="fas fa-user"></i> ログアウト
+            <%= link_to login_path, class: "nav-link", 'data-turbolinks': false do %>
+              <i class="fas fa-user"></i> ログイン
             <% end %>
           </li>
         </ul>
