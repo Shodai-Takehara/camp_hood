@@ -21,13 +21,8 @@
             <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to "#", class: "nav-link" do %>
-              <i class="fas fa-list"></i> マイリスト
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to logout_path, method: :delete, class: "nav-link" do %>
-              <i class="fas fa-user"></i> ログアウト
+            <%= link_to login_path, class: "nav-link" do %>
+              <i class="fas fa-user"></i> ログイン
             <% end %>
           </li>
         </ul>

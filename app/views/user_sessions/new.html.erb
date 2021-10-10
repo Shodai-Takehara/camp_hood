@@ -1,0 +1,27 @@
+<div id="login" class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-5">
+      <%= form_with url: login_path, local: true, class: 'login-form mt-5' do |f| %>
+        <p class="login-text">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-lock fa-stack-1x"></i>
+          </span>
+        </p>
+        <div class="form-group text-center">
+          <%= f.email_field :email, class: 'login-username fa', placeholder: "\uf0e0 Email", autofocus: 'true', required: 'true' %>
+        </div>
+        <div class="form-group text-center">
+          <%= f.password_field :password, class: 'login-password fa', placeholder: "\uf084 Password", autofocus: 'true', required: 'true' %>
+          <%= link_to 'パスワードをお忘れの方はこちら',"#", class: 'text-muted small ml-3' %>
+        </div>
+        <%= f.submit 'ログイン', class: 'login-submit px-2' %>
+      <% end %>
+      <div class='text-center small'>
+        <%= link_to '新規登録の方はこちら', new_user_path, class: 'text-white' %>
+      </div>
+      <div class="underlay-photo"></div>
+      <div class="underlay-black"></div>
+    </div>
+  </div>
+</div>

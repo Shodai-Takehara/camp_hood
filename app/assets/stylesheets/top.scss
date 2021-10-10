@@ -1,9 +1,10 @@
 .top-wrapper {
   background-image: image-url("bonfire.jpg");
-  height: calc(100vh - 134px);
-  position: relative;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
+  position: relative;
 
   .top-inner-text {
     position: absolute;
