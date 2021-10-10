@@ -1,14 +1,11 @@
-#login, #signup {
-  height: 100%;
-}
 body, html {
   height: 100%;
 }
 body {
   font-family: 'Open Sans';
   font-weight: 100;
-  // display: flex;
-  // overflow: hidden;
+  display: flex;
+  overflow: hidden;
 }
 input {
   ::-webkit-input-placeholder {
@@ -23,7 +20,7 @@ input {
   &:focus {
     outline: 0 transparent solid;
     ::-webkit-input-placeholder {
-      color: rgba(0,0,0,0.7);
+    color: rgba(0,0,0,0.7);
     }
     ::-moz-placeholder {
       color: rgba(0,0,0,0.7);
@@ -74,25 +71,24 @@ input {
   }
 }
 
-// .login-forgot-pass {
-//   //border-bottom: 1px solid white;
-//   bottom: 0;
-//   color: white;
-//   cursor: pointer;
-//   display: block;
-//   font-size: 75%;
-//   left: 0;
-//   opacity: 0.6;
-//   padding: .5rem;
-//   position: absolute;
-//   text-align: center;
-//   //text-decoration: none;
-//   width: 100%;
-//   &:hover {
-//     opacity: 1;
-//   }
-// }
-
+.login-forgot-pass {
+  //border-bottom: 1px solid white;
+  bottom: 0;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 75%;
+  left: 0;
+  opacity: 0.6;
+  padding: .5rem;
+  position: absolute;
+  text-align: center;
+  //text-decoration: none;
+  width: 100%;
+  &:hover {
+    opacity: 1;
+  }
+}
 .login-submit {
   border: 1px solid white;
   background: transparent;
@@ -118,9 +114,7 @@ input {
 }
 .underlay-photo {
   animation: hue-rotate 6s infinite;
-  background-image: image-url("bonfire.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
+  background: image-url("bonfire.jpg");
   background-size: cover;
   filter: grayscale(30%);
   z-index: -1;
@@ -132,7 +126,7 @@ input {
 
 @keyframes hue-rotate {
   from {
-    filter: grayscale(30%) hue-rotate(0deg);
+    -webkit-filter: grayscale(30%) hue-rotate(0deg);
   }
   to {
     -webkit-filter: grayscale(30%) hue-rotate(360deg);
