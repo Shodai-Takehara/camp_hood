@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
+  has_many :authentications, dependent: :destroy
+  accepts_nested_attributes_for :authentications
 
   def new
     @user = User.new
