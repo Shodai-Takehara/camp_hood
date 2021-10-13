@@ -13,15 +13,15 @@
         </div>
         <div class="form-group col-xs-12">
           <%= f.password_field :password, class: 'login-password fa', placeholder: "\uf084 Password", autofocus: 'true', required: 'true' %>
-          <%= link_to 'パスワードをお忘れの方はこちら',"#", class: 'text-muted small ml-3' %>
+          <%= link_to (t '.password_forget'),"#", class: 'text-muted small ml-3' %>
         </div>
-        <%= f.submit 'ログイン', class: 'login-submit px-2' %>
+        <%= f.submit (t 'defaults.login'), class: 'login-submit px-2' %>
       <% end %>
       <div class='text-center small'>
-        <%= link_to '新規登録の方はこちら', new_user_path, class: 'text-white' %>
+        <%= link_to (t '.to_register_page'), new_user_path, class: 'text-white' %>
       </div>
       <div class='text-center mt-5'>
-        <%= link_to 'Login with Facebook', auth_at_provider_path(provider: :facebook) %>
+        <%= link_to (t '.facebook_login'), auth_at_provider_path(provider: :facebook) %>
       </div>
       <div class="underlay-photo"></div>
       <div class="underlay-black"></div>

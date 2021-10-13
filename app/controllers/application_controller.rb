@@ -5,8 +5,7 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    flash[:warning] = "ログインしてください"
-    redirect_to login_path
+    redirect_to login_path, danger: t('.fail')
   end
 
 end
