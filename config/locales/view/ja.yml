@@ -4,14 +4,31 @@ ja:
     register: '登録'
     logout: 'ログアウト'
 
+  application:
+    not_authenticated:
+      fail: 'ログインが必要です'
+
   users:
     new:
       title: '新規登録'
-      to_login_page: 'ログインはこちらから'
+      to_login_page: 'ログインはこちら'
+    create:
+      success: 'ユーザー登録が完了しました'
+      fail: 'ユーザー登録に失敗しました'
 
   user_sessions:
     new:
       title: 'ログイン'
-      to_register_page: '登録画面はこちら'
-      password_forget: 'パスワードをお忘れの方はこちらから'
+      to_register_page: '新規登録の方はこちら'
+      password_forget: 'パスワードをお忘れの方はこちら'
+      facebook_login: 'Facebookでログイン'
+    create:
+      success: 'ログインしました'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
 
+  oauths:
+    callback:
+      success: 'Facebookでログインしました'
+      fail: 'Facebookでのログインに失敗しました'

@@ -8,15 +8,15 @@ class OauthsController < ApplicationController
   def callback
     provider = auth_params[:provider]
     if (@user = login_from(provider))
-      redirect_to root_path, success: "Facebookでログインしました"
+      redirect_to root_path, success: t('.success')
     else
       begin
         @user = create_from(provider)
         reset_session
         auto_login(@user)
-        redirect_to root_path, success: "Facebookでログインしました"
+        redirect_to root_path, success: t('.success')
       rescue StandardError
-        redirect_to root_path, warning: "Facebookでのログインに失敗しました"
+        redirect_to root_path, warning: t('.fail')
       end
     end
   end
