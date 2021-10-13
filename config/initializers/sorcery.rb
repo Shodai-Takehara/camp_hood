@@ -115,8 +115,8 @@ Rails.application.config.sorcery.configure do |config|
   config.facebook.key = Rails.application.credentials.dig(:sorcery, :facebook, :key)
   config.facebook.secret = Rails.application.credentials.dig(:sorcery, :facebook, :secret)
   config.facebook.callback_url = "https://localhost:9292/oauth/callback?provider=facebook"
-  config.facebook.user_info_path = "me?fields=email"
-  config.facebook.user_info_mapping = {:email => "email"}
+  config.facebook.user_info_path = "me?fields=email, name"
+  config.facebook.user_info_mapping = {email: "email", name: "name" }
   config.facebook.access_permissions = ["email"]
   config.facebook.display = "page"
   config.facebook.api_version = "v12.0"
@@ -217,6 +217,8 @@ Rails.application.config.sorcery.configure do |config|
 
   # --- user config ---
   config.user_config do |user|
+
+    user.authentications_class = Authentication
     # -- core --
     # Specify username attributes, for example: [:username, :email].
     # Default: `[:email]`

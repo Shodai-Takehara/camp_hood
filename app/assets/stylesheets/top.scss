@@ -1,23 +1,9 @@
-.top-wrapper {
-  background-image: image-url("bonfire.jpg");
-  background-position: center center;
+.top-image {
+  background: image-url("bonfire.jpg");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  background-attachment: scroll;
+  height: calc(100vh - 134px);
   position: relative;
-
-  .top-inner-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
-    color: white;
-
-    @media screen and (max-width: 767px) {
-      font-size: 2.0rem;
-    }
-  }
 }

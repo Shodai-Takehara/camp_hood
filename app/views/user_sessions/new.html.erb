@@ -8,10 +8,10 @@
             <i class="fa fa-lock fa-stack-1x"></i>
           </span>
         </p>
-        <div class="form-group text-center col-xs-12">
+        <div class="form-group col-xs-12">
           <%= f.email_field :email, class: 'login-username fa', placeholder: "\uf0e0 Email", autofocus: 'true', required: 'true' %>
         </div>
-        <div class="form-group text-center col-xs-12">
+        <div class="form-group col-xs-12">
           <%= f.password_field :password, class: 'login-password fa', placeholder: "\uf084 Password", autofocus: 'true', required: 'true' %>
           <%= link_to 'パスワードをお忘れの方はこちら',"#", class: 'text-muted small ml-3' %>
         </div>
@@ -19,6 +19,9 @@
       <% end %>
       <div class='text-center small'>
         <%= link_to '新規登録の方はこちら', new_user_path, class: 'text-white' %>
+      </div>
+      <div class='text-center mt-5'>
+        <%= link_to 'Login with Facebook', auth_at_provider_path(provider: :facebook) %>
       </div>
       <div class="underlay-photo"></div>
       <div class="underlay-black"></div>
