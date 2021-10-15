@@ -1,6 +1,6 @@
 <div id="signup" class="container">
   <div class="row">
-    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-5">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-4">
       <%= form_with model: @user, local: true, class: 'login-form mt-5' do |f| %>
         <p class="login-text">
           <span class="fa-stack fa-lg">
@@ -9,18 +9,18 @@
           </span>
         </p>
         <div class="form-group">
-          <%= f.text_field :name, class: 'login-username fa', placeholder: "\uf007 User Name", autofocus: 'true', required: 'true' %>
+          <%= f.text_field :name, class: 'login-username fa small', placeholder: "\uf007 User Name", autofocus: 'true', required: 'true' %>
         </div>
         <div class="form-group">
-          <%= f.email_field :email, class: 'login-username fa', placeholder: "\uf0e0 Email", autofocus: 'true', required: 'true' %>
+          <%= f.email_field :email, class: 'login-username fa small', placeholder: "\uf0e0 Email", autofocus: 'true', required: 'true' %>
         </div>
         <div class="form-group">
-          <%= f.password_field :password, class: 'login-password fa', placeholder: "\uf084 Password", autofocus: 'true', required: 'true' %>
+          <%= f.password_field :password, class: 'login-password fa small', placeholder: "\uf084 Password", autofocus: 'true', required: 'true' %>
         </div>
         <div class="form-group">
-          <%= f.password_field :password_confirmation, class: 'login-password fa', placeholder: "\uf084 Password再確認", autofocus: 'true', required: 'true' %>
+          <%= f.password_field :password_confirmation, class: 'login-password fa small', placeholder: "\uf084 Password再確認", autofocus: 'true', required: 'true' %>
         </div>
-        <%= f.submit '登録する', class: 'login-submit px-2' %>
+        <%= f.submit class: 'login-submit px-3' %>
       <% end %>
       <div class='text-center small'>
         <%= link_to 'ログインはこちらから', login_path, class: 'text-white' %>

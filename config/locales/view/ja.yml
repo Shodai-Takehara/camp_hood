@@ -4,10 +4,6 @@ ja:
     register: '登録'
     logout: 'ログアウト'
 
-  application:
-    not_authenticated:
-      fail: 'ログインが必要です'
-
   users:
     new:
       title: '新規登録'
