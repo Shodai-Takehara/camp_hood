@@ -1,3 +1,4 @@
+<% content_for(:title, t('.title')) %>
 <div id="login" class="container">
   <div class="row">
     <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-4">
@@ -21,7 +22,9 @@
         <%= link_to (t '.to_register_page'), new_user_path, class: 'text-white' %>
       </div>
       <div class='text-center mt-5'>
-        <%= link_to (t '.facebook_login'), auth_at_provider_path(provider: :facebook) %>
+        <%= link_to auth_at_provider_path(provider: :facebook), class: 'btn btn-primary text-white px-4' do %>
+        <i class="fab fa-facebook-f"> Facebookでログイン</i>
+        <% end %>
       </div>
       <div class="underlay-photo"></div>
       <div class="underlay-black"></div>

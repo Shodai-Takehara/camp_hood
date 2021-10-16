@@ -1,3 +1,4 @@
+<% content_for(:title, t('.title')) %>
 <div id="useredit" class="container">
   <div class="row">
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-4">
@@ -15,7 +16,7 @@
         <div class="form-group">
           <%= f.email_field :email, class: 'login-username fa small', placeholder: "\uf0e0 Email", autofocus: 'true', required: 'true' %>
         </div>
-        <%= f.submit '更新する', class: 'login-submit px-3' %>
+        <%= f.submit class: 'login-submit px-3' %>
       <% end %>
       <div class="underlay-photo"></div>
       <div class="underlay-black"></div>

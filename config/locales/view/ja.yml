@@ -28,3 +28,12 @@ ja:
     callback:
       success: 'Facebookでログインしました'
       fail: 'Facebookでのログインに失敗しました'
+
+  profiles:
+    show:
+      title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'
+    update:
+      success: '更新が完了しました'
+      fails: '更新に失敗しました'
