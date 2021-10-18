@@ -34,6 +34,7 @@ ja:
       title: 'プロフィール'
     edit:
       title: 'プロフィール編集'
+      avatar: 'アバター'
     update:
       success: '更新が完了しました'
-      fails: '更新に失敗しました'
+      fail: '更新に失敗しました'

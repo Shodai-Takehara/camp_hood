@@ -16,6 +16,17 @@
         <div class="form-group">
           <%= f.email_field :email, class: 'login-username fa small', placeholder: "\uf0e0 Email", autofocus: 'true', required: 'true' %>
         </div>
+        <div class="form-group">
+          <%= f.label t('.avatar'), class: "text-white" %>
+          <%= f.file_field :avatar, onchange: 'previewImage()', class: 'form-control mb-4', accept: 'image/*' %>
+          <%= f.hidden_field :avatar_cache %>
+        </div>
+        <div class='mt-4 mb-4 text-center'>
+        <%= image_tag @user.avatar.url,
+                      class: 'rounded-circle',
+                      id: 'preview',
+                      size: '150x150' %>
+        </div>
         <%= f.submit class: 'login-submit px-3' %>
       <% end %>
       <div class="underlay-photo"></div>
