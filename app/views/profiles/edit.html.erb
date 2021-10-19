@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
           <%= f.label t('.avatar'), class: "text-white" %>
-          <%= f.file_field :avatar, onchange: 'previewImage()', class: 'form-control mb-4', accept: 'image/*' %>
+          <%= f.file_field :avatar, onchange: 'previewImage()', class: 'form-control form-control-sm mb-4', accept: 'image/*' %>
           <%= f.hidden_field :avatar_cache %>
         </div>
         <div class='mt-4 mb-4 text-center'>
