@@ -63,10 +63,10 @@ input {
   border-bottom: 1px solid rgba(white, .5);
   color: white;
   display: block;
-  margin: 1rem;
+  margin: 1rem 0;
   padding: .5rem;
   transition: 250ms background ease-in;
-  width: calc(100% - 3rem);
+  width: 100%;
   &:focus {
     background: white;
     color: black;
