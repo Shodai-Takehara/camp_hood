@@ -4,10 +4,6 @@ ja:
     register: '登録'
     logout: 'ログアウト'
 
-  application:
-    not_authenticated:
-      fail: 'ログインが必要です'
-
   users:
     new:
       title: '新規登録'
@@ -32,3 +28,13 @@ ja:
     callback:
       success: 'Facebookでログインしました'
       fail: 'Facebookでのログインに失敗しました'
+
+  profiles:
+    show:
+      title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'
+      avatar: 'アバター'
+    update:
+      success: '更新が完了しました'
+      fail: '更新に失敗しました'

@@ -39,3 +39,9 @@ yarn-debug.log*
 # SSL証明
 localhost-key.pem
 localhost.pem
+
+# carriewave
+public/uploads/
+
+# vscode
+.vscode/
