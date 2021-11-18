@@ -4,10 +4,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
-  min-height: 100vh;
+  height: calc(100vh - 134px);
   position: relative;
-}
-
-.footer {
-  background-color: #f2ece9;
 }

@@ -1,16 +1,12 @@
-<footer id="footer" class="footer text-center pt-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="col-md-12">
-          <%= link_to '利用規約', '#', class: 'text-muted'%>
-          <span class="text-muted mx-2">|</span>
-          <%= link_to 'プライバシーポリシー', '#', class: 'text-muted'%>
-          <span class="text-muted mx-2">|</span>
-          <%= link_to 'お問い合わせ', '#', class: 'text-muted'%>
-          <p class="text-muted">© 2021. CAMPHOOD</p>
-        </div>
-      </div>
+<footer id="footer" class="footer text-center">
+  <div class="container px-4 px-lg-5 text-white">
+    <div class="container pt-2 px-4 px-lg-5 text-white-50">
+      <%= link_to "#", class: 'text-white' do %>利用規約<% end %>
+      ｜
+      <%= link_to "#", class: 'text-white' do %>プライバシーポリシー<% end %>
+      ｜
+      <%= link_to '#', class: 'text-white' do %>お問い合わせ<% end %>
     </div>
+    <p class="text-white">Copyright &copy; CAMPHOOD 2021.</p>
   </div>
 </footer>
