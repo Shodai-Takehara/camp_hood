@@ -1,40 +1,46 @@
 ja:
   defaults:
-    login: 'ログイン'
-    register: '登録'
-    logout: 'ログアウト'
+    login: "ログイン"
+    register: "登録"
+    logout: "ログアウト"
 
   users:
     new:
-      title: '新規登録'
-      to_login_page: 'ログインはこちら'
+      title: "新規登録"
+      to_login_page: "ログインはこちら"
     create:
-      success: 'ユーザー登録が完了しました'
-      fail: 'ユーザー登録に失敗しました'
+      success: "ユーザー登録が完了しました"
+      fail: "ユーザー登録に失敗しました"
 
   user_sessions:
     new:
-      title: 'ログイン'
-      to_register_page: '新規登録の方はこちら'
-      password_forget: 'パスワードをお忘れの方はこちら'
-      facebook_login: 'Facebookでログイン'
+      title: "ログイン"
+      to_register_page: "新規登録の方はこちら"
+      password_forget: "パスワードをお忘れの方はこちら"
+      facebook_login: "Facebookでログイン"
     create:
-      success: 'ログインしました'
-      fail: 'ログインに失敗しました'
+      success: "ログインしました"
+      fail: "ログインに失敗しました"
     destroy:
-      success: 'ログアウトしました'
+      success: "ログアウトしました"
 
   oauths:
     callback:
-      success: 'Facebookでログインしました'
-      fail: 'Facebookでのログインに失敗しました'
+      success: "Facebookでログインしました"
+      fail: "Facebookでのログインに失敗しました"
 
   profiles:
     show:
-      title: 'プロフィール'
+      title: "プロフィール"
     edit:
-      title: 'プロフィール編集'
-      avatar: 'アバター'
+      title: "プロフィール編集"
+      avatar: "アバター"
     update:
-      success: '更新が完了しました'
-      fail: '更新に失敗しました'
+      success: "更新が完了しました"
+      fail: "更新に失敗しました"
+
+  campsites:
+    index:
+      title: "キャンプ場一覧"
+    show:
+      title: "キャンプ場詳細"

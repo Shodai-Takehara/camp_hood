@@ -1,0 +1,21 @@
+<div class="col-sm-12 col-lg-4 mb-4 text-center">
+  <div class="card-radius">
+    <article class="card">
+      <div class="card__header">
+        <%= link_to "#", class: "card__title fas fa-campground" do %>
+          <%= campsite.name %>
+        <% end %>
+        <figure class="card__thumbnail">
+          <%= image_tag 'campsite.jpg', alt: "キャンプ場の写真",  class: "card__image" %>
+        </figure>
+      </div>
+      <div class="card__body">
+        <p class="card__text fas fa-map-marker-alt"> <%= campsite.address %></p><br>
+        <p class="card__text fa fa-clock"> <%= campsite.period %></p>
+      </div>
+      <div class="card__footer text-center">
+        <p class="card__text"><a href="#" class="btn btn-success">　　キャンプ場詳細　　</a></p>
+      </div>
+    </article>
+  </div>
+</div>

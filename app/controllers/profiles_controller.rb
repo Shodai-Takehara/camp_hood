@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to profile_edit_path, success: t('.success') #一時的に同じ画面へ遷移
+      redirect_to edit_profile_path, success: t('.success') #一時的に同じ画面へ遷移
     else
       flash.now['danger'] = t('.fail')
       render :edit

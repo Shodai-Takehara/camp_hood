@@ -1,0 +1,13 @@
+<% content_for(:title, t('.title')) %>
+  <div class="container px-4 px-lg-5">
+    <div class="col-12">
+      <div class="row">
+        <% if @campsites.present? %>
+          <%= render @campsites %>
+        <% else %>
+          <h3>検索条件に該当するキャンプ場がありませんでした。</h3>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
