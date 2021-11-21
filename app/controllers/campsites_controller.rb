@@ -3,7 +3,7 @@ class CampsitesController < ApplicationController
   before_action :set_campsite, only: %i[show]
 
   def index
-    @campsites = Campsite.all
+    @campsites = Campsite.all.page(params[:page])
   end
 
   def show ; end
