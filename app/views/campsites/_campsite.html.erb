@@ -2,7 +2,7 @@
   <div class="card-radius">
     <article class="card">
       <div class="card__header">
-        <%= link_to "#", class: "card__title fas fa-campground" do %>
+        <%= link_to campsite_path(campsite.id), class: "card__title fas fa-campground" do %>
           <%= campsite.name %>
         <% end %>
         <figure class="card__thumbnail">
@@ -14,7 +14,9 @@
         <p class="card__text fa fa-clock"> <%= campsite.period %></p>
       </div>
       <div class="card__footer text-center">
-        <p class="card__text"><a href="#" class="btn btn-success">　　キャンプ場詳細　　</a></p>
+        <%= link_to campsite_path(campsite.id), class: "card__text btn btn-success" do %>
+        　　キャンプ場詳細　　
+        <% end %>
       </div>
     </article>
   </div>

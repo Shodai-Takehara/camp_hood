@@ -1,3 +1,52 @@
 <% content_for(:title, t('.title')) %>
-
-<h2>show</h2>
+<div class="container px-4 px-lg-5 mt-4">
+  <div class="row">
+    <div class="col-12">
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"><%= t '.info' %></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"><%= t '.name' %></th>
+                <td><p><%= @campsite.name %></p></td>
+            </tr>
+            <tr>
+                <th scope="row"><%= t '.address' %></th>
+                <td><p><%= @campsite.address %></p></td>
+            </tr>
+            <tr>
+                <th scope="row"><%= t '.period' %></th>
+                <td><p><%= @campsite.period %></p></td>
+            </tr>
+            <tr>
+                <th scope="row"><%= t '.checkin' %></th>
+                <td><p><%= @campsite.checkin %></p></td>
+            </tr>
+            <tr>
+                <th scope="row"><%= t '.checkout' %></th>
+                <td><p><%= @campsite.checkout %></p></td>
+            </tr>
+            <tr>
+                <th scope="row"><%= t '.access' %></th>
+                <td><p><%= @campsite.access %></p></td>
+            </tr>
+            <tr>
+                <th scope="row"><%= t '.description' %></th>
+                <td><p><%= @campsite.description %></p></td>
+            </tr>
+            <tr>
+                <th scope="row"><%= t '.phone' %></th>
+                <td><a href="tel:"><%= @campsite.phone %></a></td>
+            </tr>
+            <tr>
+                <th scope="row"><%= t '.contact_link' %></th>
+                <td><%= link_to @campsite.contact_link %></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+  </div>
+</div>

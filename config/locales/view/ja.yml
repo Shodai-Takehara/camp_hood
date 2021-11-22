@@ -42,8 +42,19 @@ ja:
   campsites:
     index:
       title: "キャンプ場一覧"
+      danger: "検索条件に該当するキャンプ場はありませんでした。"
     show:
       title: "キャンプ場詳細"
+      info: "基本情報"
+      name: "施設名"
+      address: "住所"
+      period: "営業期間"
+      checkin: チェックイン
+      checkout: チェックアウト
+      access: "アクセス案内"
+      description: "施設情報"
+      phone: "電話番号"
+      contact_link: "問合わせ先"
 
   views:
     pagination:
