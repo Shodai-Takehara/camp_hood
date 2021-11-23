@@ -65,4 +65,15 @@
   table, tbody, tr, th, td {
     display: block;
     }
+  th {
+    width: 100% !important;
+  }
+}
+
+.link-color a {
+  color: #28a745;
+}
+
+.link-color a:hover {
+  color: #005731;
 }

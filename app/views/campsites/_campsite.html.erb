@@ -1,4 +1,4 @@
-<div class="col-sm-12 col-lg-4 mb-4 text-center">
+<div class="col-sm-12 col-lg-4 mt-4 mb-4 text-center">
   <div class="card-radius">
     <article class="card">
       <div class="card__header">
@@ -6,7 +6,7 @@
           <%= campsite.name %>
         <% end %>
         <figure class="card__thumbnail">
-          <%= image_tag 'campsite.jpg', alt: "キャンプ場の写真",  class: "card__image" %>
+          <%= image_tag campsite.image.nil? ? "campsite.jpg" : campsite.image, alt: "キャンプ場の写真",  class: "card__image" %>
         </figure>
       </div>
       <div class="card__body">

@@ -6,8 +6,7 @@ class CampsitesController < ApplicationController
     @campsites = Campsite.all.page(params[:page])
   end
 
-  def show
-  end
+  def show ; end
 
   private
 

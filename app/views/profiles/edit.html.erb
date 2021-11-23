@@ -1,7 +1,7 @@
 <% content_for(:title, t('.title')) %>
 <div id="useredit" class="container">
   <div class="row">
-    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-4">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <%= form_with model: @user, local: true, url: profile_path, class: 'login-form mt-5' do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <p class="login-text">
