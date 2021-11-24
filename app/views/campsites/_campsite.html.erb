@@ -1,0 +1,24 @@
+<div class="col-sm-12 col-lg-4 mt-4 mb-4 text-center">
+  <div class="card-radius">
+    <article class="card">
+      <div class="card__header">
+        <%= link_to campsite_path(campsite.id), class: "card__title fas fa-campground" do %>
+          <%= campsite.name %>
+        <% end %>
+        <figure class="card__thumbnail">
+          <%= image_tag campsite.image.nil? ? "campsite.jpg" : campsite.image, alt: "キャンプ場の写真",  class: "card__image rounded" %>
+        </figure>
+      </div>
+      <div class="card__body">
+        <%= render 'bookmark_button', campsite: campsite %>
+        <p class="card__text fas fa-map-marker-alt"> <%= campsite.address %></p><br>
+        <p class="card__text fa fa-clock"> <%= campsite.period %></p>
+      </div>
+      <div class="card__footer text-center">
+        <%= link_to campsite_path(campsite.id), class: "card__text btn btn-success" do %>
+        　　キャンプ場詳細　　
+        <% end %>
+      </div>
+    </article>
+  </div>
+</div>

@@ -1,40 +1,65 @@
 ja:
   defaults:
-    login: 'ログイン'
-    register: '登録'
-    logout: 'ログアウト'
+    login: "ログイン"
+    register: "登録"
+    logout: "ログアウト"
 
   users:
     new:
-      title: '新規登録'
-      to_login_page: 'ログインはこちら'
+      title: "新規登録"
+      to_login_page: "ログインはこちら"
     create:
-      success: 'ユーザー登録が完了しました'
-      fail: 'ユーザー登録に失敗しました'
+      success: "ユーザー登録が完了しました"
+      fail: "ユーザー登録に失敗しました"
 
   user_sessions:
     new:
-      title: 'ログイン'
-      to_register_page: '新規登録の方はこちら'
-      password_forget: 'パスワードをお忘れの方はこちら'
-      facebook_login: 'Facebookでログイン'
+      title: "ログイン"
+      to_register_page: "新規登録の方はこちら"
+      password_forget: "パスワードをお忘れの方はこちら"
+      facebook_login: "Facebookでログイン"
     create:
-      success: 'ログインしました'
-      fail: 'ログインに失敗しました'
+      success: "ログインしました"
+      fail: "ログインに失敗しました"
     destroy:
-      success: 'ログアウトしました'
+      success: "ログアウトしました"
 
   oauths:
     callback:
-      success: 'Facebookでログインしました'
-      fail: 'Facebookでのログインに失敗しました'
+      success: "Facebookでログインしました"
+      fail: "Facebookでのログインに失敗しました"
 
   profiles:
     show:
-      title: 'プロフィール'
+      title: "プロフィール"
     edit:
-      title: 'プロフィール編集'
-      avatar: 'アバター'
+      title: "プロフィール編集"
+      avatar: "アバター"
     update:
-      success: '更新が完了しました'
-      fail: '更新に失敗しました'
+      success: "更新が完了しました"
+      fail: "更新に失敗しました"
+
+  campsites:
+    index:
+      title: "キャンプ場一覧"
+      danger: "検索条件に該当するキャンプ場はありませんでした。"
+    show:
+      title: "キャンプ場詳細"
+      info: "基本情報"
+      name: "施設名"
+      address: "住所"
+      period: "営業期間"
+      checkin: チェックイン
+      checkout: チェックアウト
+      access: "アクセス案内"
+      description: "施設情報"
+      phone: "電話番号"
+      contact_link: "問合わせ先"
+
+  views:
+    pagination:
+      first: <i class="fas fa-angle-double-left"></i>
+      last: <i class="fas fa-angle-double-right"></i>
+      previous: <i class="fas fa-angle-left"></i>
+      next: <i class="fas fa-angle-right"></i>
+      truncate: "..."

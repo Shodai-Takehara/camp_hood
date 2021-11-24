@@ -1,0 +1,9 @@
+<%= link_to bookmark_path(current_user.bookmarks.find_by(campsite_id: campsite.id)),
+    id: "js-bookmark-button-for-campsite-#{campsite.id}",
+    method: :delete,
+    class: "float-right",
+    remote: true,
+    data: {"turbolinks" => false} do %>
+      <div class="heart HeartAnimation">
+      </div>
+<% end %>

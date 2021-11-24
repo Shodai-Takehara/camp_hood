@@ -1,0 +1,10 @@
+<%= link_to bookmarks_path(campsite_id: campsite.id),
+    id: "js-bookmark-button-for-campsite-#{campsite.id}",
+    method: :post,
+    class: "float-right",
+    remote: true,
+    data: {"turbolinks" => false} do %>
+  <div class="heart">
+    <span class="heart_hover">行きたい！</span>
+  </div>
+<% end %>
