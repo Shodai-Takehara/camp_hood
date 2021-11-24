@@ -1,0 +1,2 @@
+$("#js-bookmark-button-for-campsite-<%= @campsite.id %>")
+.replaceWith("<%= j(render('campsites/unbookmark', campsite: @campsite)) %>");
