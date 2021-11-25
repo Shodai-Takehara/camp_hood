@@ -14,7 +14,7 @@
         <tbody>
             <tr>
                 <th scope="row"><%= t '.name' %></th>
-                <td><h4 class="text-black"><%= @campsite.name %></h4></td>
+                <td><h5><%= @campsite.name %></h5></td>
             </tr>
             <tr>
                 <th scope="row"><%= t '.address' %></th>
@@ -46,7 +46,7 @@
             </tr>
             <tr>
                 <th scope="row" class="link-color"><%= t '.contact_link' %></th>
-                <td class="link-color"><%= link_to @campsite.contact_link %></td>
+                <td class="link-color"><%= text_url_to_link(h(@campsite.contact_link)).html_safe %></td>
             </tr>
         </tbody>
     </table>
