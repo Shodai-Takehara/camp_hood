@@ -8,6 +8,10 @@ class CampsitesController < ApplicationController
 
   def show ; end
 
+  def mypage
+    @bookmark_campsites = current_user.bookmark_campsites.order(created_at: :asc).page(params[:page]).per(9)
+  end
+
   private
 
   def set_campsite

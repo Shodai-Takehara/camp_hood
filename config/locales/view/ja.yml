@@ -3,6 +3,7 @@ ja:
     login: "ログイン"
     register: "登録"
     logout: "ログアウト"
+    password_reset: "パスワードリセット"
 
   users:
     new:
@@ -30,11 +31,8 @@ ja:
       fail: "Facebookでのログインに失敗しました"
 
   profiles:
-    show:
-      title: "プロフィール"
     edit:
       title: "プロフィール編集"
-      avatar: "アバター"
     update:
       success: "更新が完了しました"
       fail: "更新に失敗しました"
@@ -55,6 +53,23 @@ ja:
       description: "施設情報"
       phone: "電話番号"
       contact_link: "問合わせ先"
+    mypage:
+      title: "マイページ"
+
+  password_resets:
+    new:
+      title: "パスワードリセット"
+      submit: "送信"
+      back: "ログイン画面へ戻る"
+    edit:
+      title: "パスワード更新"
+      submit: "更新"
+    create:
+      success: 'パスワードリセット手順を送信しました'
+    update:
+      success: 'パスワードを更新しました'
+      fail: 'パスワードの更新に失敗しました'
+
 
   views:
     pagination:
