@@ -2,7 +2,7 @@
 <div id="useredit" class="container">
   <div class="row">
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <%= form_with model: @user, local: true, url: profile_path, class: 'login-form mt-5' do |f| %>
+      <%= form_with model: @user, local: true, url: profile_path, class: 'login-form mt-3' do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <p class="login-text">
           <span class="fa-stack fa-lg">
@@ -17,17 +17,16 @@
           <%= f.email_field :email, class: 'login-username fa small', placeholder: "\uf0e0 Email", autofocus: 'true', required: 'true' %>
         </div>
         <div class="form-group">
-          <%= f.label t('.avatar'), class: "text-white" %>
-          <%= f.file_field :avatar, onchange: 'previewImage()', class: 'form-control form-control-sm mb-4', accept: 'image/*' %>
+          <%= f.file_field :avatar, onchange: 'previewImage()', class: 'form-control form-control-sm mt-5 mb-4', accept: 'image/*' %>
           <%= f.hidden_field :avatar_cache %>
         </div>
-        <div class='mt-4 mb-4 text-center'>
+        <div class='mt-5 text-center'>
         <%= image_tag @user.avatar.url,
                       class: 'rounded-circle',
                       id: 'preview',
                       size: '150x150' %>
         </div>
-        <%= f.submit class: 'login-submit px-3' %>
+        <%= f.submit class: 'login-submit mt-5 px-3' %>
       <% end %>
       <div class="underlay-photo"></div>
       <div class="underlay-black"></div>

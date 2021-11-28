@@ -1,8 +1,8 @@
 <% content_for(:title, t('.title')) %>
 <div id="login" class="container">
   <div class="row">
-    <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-4">
-      <%= form_with url: login_path, local: true, class: 'login-form mt-5' do |f| %>
+    <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-3">
+      <%= form_with url: login_path, local: true, class: 'login-form mt-3' do |f| %>
         <p class="login-text">
           <span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
@@ -14,16 +14,16 @@
         </div>
         <div class="form-group col-xs-12">
           <%= f.password_field :password, class: 'login-password fa small', placeholder: "\uf084 Password", autofocus: 'true', required: 'true' %>
-          <%= link_to (t '.password_forget'),"#", class: 'text-muted small ml-3' %>
+          <%= link_to (t '.password_forget'), new_password_reset_path, class: 'text-muted small' %>
         </div>
-        <%= f.submit (t 'defaults.login'), class: 'login-submit px-3' %>
+        <%= f.submit (t 'defaults.login'), class: 'login-submit px-3 mt-4' %>
       <% end %>
-      <div class='text-center small'>
+      <div class='text-center small mt-3'>
         <%= link_to (t '.to_register_page'), new_user_path, class: 'text-white' %>
       </div>
       <div class='text-center mt-5'>
         <%= link_to auth_at_provider_path(provider: :facebook), class: 'btn btn-primary text-white px-4' do %>
-        <i class="fab fa-facebook-f"> Facebookでログイン</i>
+        <i class="fa fab fa-facebook-f"> Facebookでログイン</i>
         <% end %>
       </div>
       <div class="underlay-photo"></div>

@@ -1,8 +1,8 @@
 <% content_for(:title, t('.title')) %>
 <div id="signup" class="container">
   <div class="row">
-    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-4">
-      <%= form_with model: @user, local: true, class: 'login-form mt-5' do |f| %>
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-3">
+      <%= form_with model: @user, local: true, class: 'login-form mt-3' do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <p class="login-text">
           <span class="fa-stack fa-lg">

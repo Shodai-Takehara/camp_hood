@@ -1,0 +1,25 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <div class="row">
+    <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-3">
+      <%= form_with url: password_resets_path, local: true, class: 'login-form mt-3' do |f| %>
+        <p class="login-text">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-key fa-stack-1x"></i>
+          </span>
+        </p>
+        <div class="form-group col-xs-12">
+          <%= f.email_field :email, class: 'login-username fa small', placeholder: "\uf0e0 Email", autofocus: 'true', required: 'true' %>
+          <p class="small text-center text-white">パスワードリセット手順を送信します</p>
+        </div>
+        <%= f.submit (t 'password_resets.new.submit'), class: 'login-submit px-3 mt-4' %>
+      <% end %>
+      <div class='text-center small mt-3'>
+        <%= link_to (t '.back'), login_path, class: 'text-white' %>
+      </div>
+      <div class="underlay-photo"></div>
+      <div class="underlay-black"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <div class="row">
+    <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-3">
+      <%= form_with model: @user, url: password_reset_path(@token), local: true, class: 'login-form mt-3' do |f| %>
+        <p class="login-text">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-key fa-stack-1x"></i>
+          </span>
+        </p>
+        <div class="form-group col-xs-12 text-center text-white mt-3">
+          <%= @user.email %>様
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password, class: 'login-password fa small', placeholder: "\uf084 Password更新", autofocus: 'true', required: 'true' %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password_confirmation, class: 'login-password fa small', placeholder: "\uf084 Password更新の再確認", autofocus: 'true', required: 'true' %>
+        <%= f.submit class: 'login-submit px-3 mt-4' %>
+      <% end %>
+      <div class="underlay-photo"></div>
+      <div class="underlay-black"></div>
+    </div>
+  </div>
+</div>

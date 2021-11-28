@@ -42,7 +42,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
-  gem 'pry-byebug'
+  # メーラー確認
+  gem 'letter_opener_web', '~> 1.0'
 end
 
 group :test do
@@ -67,3 +68,6 @@ gem 'sorcery', '0.14.0'
 
 # 国際化
 gem 'rails-i18n'
+
+# 定数管理
+gem 'config'

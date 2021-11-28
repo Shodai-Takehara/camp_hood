@@ -1,11 +1,14 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: %i[edit update]
+  before_action :set_user, only: %i[show edit update]
+
+  def show
+  end
 
   def edit; end
 
   def update
     if @user.update(user_params)
-      redirect_to edit_profile_path, success: t('.success') #一時的に同じ画面へ遷移
+      redirect_to mypage_campsites_path, success: t('.success')
     else
       flash.now['danger'] = t('.fail')
       render :edit
