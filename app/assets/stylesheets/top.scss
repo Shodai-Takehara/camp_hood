@@ -2,8 +2,18 @@
   background: image-url("bonfire.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  // background-size: cover;
   background-attachment: scroll;
   height: calc(100vh - 134px);
   position: relative;
+}
+
+.underlay-photo-top {
+  animation: hue-rotate 12s infinite;
+  background-image: image-url("bonfire.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(30%);
+  z-index: -1;
 }

@@ -1,4 +1,4 @@
-<% if current_user.nil? %>
+<% if !logged_in? %>
   <%= render 'bookmark', campsite: campsite %>
 <% elsif current_user.bookmark?(campsite) %>
   <%= render 'unbookmark', campsite: campsite %>

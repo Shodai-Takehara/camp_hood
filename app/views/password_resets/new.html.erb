@@ -11,6 +11,7 @@
         </p>
         <div class="form-group col-xs-12">
           <%= f.email_field :email, class: 'login-username fa small', placeholder: "\uf0e0 Email", autofocus: 'true', required: 'true' %>
+          <p class="small text-center text-white">パスワードリセット手順を送信します</p>
         </div>
         <%= f.submit (t 'password_resets.new.submit'), class: 'login-submit px-3 mt-4' %>
       <% end %>
