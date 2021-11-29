@@ -1,0 +1,10 @@
+<%= search_form_for search, url: url do |f| %>
+  <div class="input-group mb-3">
+    <%= f.search_field :name_or_address_or_description_or_access_cont, class: 'form-control', placeholder: "検索ワードを入力" %>
+    <div class="input-group-append">
+      <button class="btn btn-success" type="submit">
+        <i class='fa fa-search'></i>
+      </button>
+    </div>
+  </div>
+<% end %>

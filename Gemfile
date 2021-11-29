@@ -62,6 +62,7 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'carrierwave', '2.0.2'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'kaminari'
+gem 'ransack'
 
 # login
 gem 'sorcery', '0.14.0'
