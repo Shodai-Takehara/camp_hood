@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_to root_path, success: t('.success')
+      redirect_back_or_to root_path, success: t('.success')
     else
       flash.now[:danger] = t('.fail')
       render :new
@@ -15,7 +15,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to root_path, danger: t('.success')
+    redirect_back_or_to root_path, danger: t('.success')
   end
 
 end

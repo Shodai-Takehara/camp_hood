@@ -1,4 +1,5 @@
 class BookmarksController < ApplicationController
+  skip_before_action :require_login
   def create
     @campsite = Campsite.find(params[:campsite_id])
     current_user.bookmark(@campsite)

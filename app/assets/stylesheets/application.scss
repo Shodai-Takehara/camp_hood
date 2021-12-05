@@ -22,6 +22,14 @@
 @import "bookmark";
 @import "profiles";
 
+#container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width:100%;
+  overflow:hidden;
+}
+
 body {
   background-color: #fff !important;
 }
@@ -55,6 +63,10 @@ header {
     justify-content: center;
     align-items: right;
   }
+}
+
+footer {
+  margin-top: auto;
 }
 
 // コンテンツの高さに応じてフッターの位置を調整
