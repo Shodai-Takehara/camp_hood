@@ -4,16 +4,7 @@
 #passwordresets {
   height: 100vh;
 }
-body,
-html {
-  height: 100%;
-}
-body {
-  font-family: "Open Sans";
-  font-weight: 100;
-  // display: flex;
-  // overflow: hidden;
-}
+
 input {
   ::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.7);

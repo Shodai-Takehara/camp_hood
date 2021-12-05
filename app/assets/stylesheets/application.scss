@@ -1,13 +1,3 @@
-@import "top";
-@import "users_new";
-@import "campsite";
-@import "paginate";
-@import "bookmark";
-@import "profiles";
-@import "bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -21,3 +11,57 @@
  * It is generally better to create a new file per style scope.
  *
  */
+
+@import "bootstrap";
+@import "users_new";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "top";
+@import "campsite";
+@import "paginate";
+@import "bookmark";
+@import "profiles";
+
+body {
+  background-color: #fff !important;
+}
+
+.flash-message {
+  width: auto !important;
+  position: absolute !important;
+  top: 9%;
+  right: 5%;
+  text-align: right;
+  position: fixed;
+  margin-top: 2%;
+  z-index: 100;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+header {
+  background: none;
+  // headerを常時上に固定する
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 10;
+
+  // ナビゲーションの項目を横並びにする
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: right;
+  }
+}
+
+// コンテンツの高さに応じてフッターの位置を調整
+.footerFixed{
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 70px;
+  box-sizing: border-box;
+  /* ↑ヘッダーやフッターを含むすべての要素の高さ＝min-height:100vhになるように指定 */
+}

@@ -10,14 +10,11 @@
         </figure>
       </div>
       <div class="card__body">
+      </div>
+      <div class="card__footer text-center">
         <%= render 'bookmark_button', campsite: campsite %>
         <p class="card__text fas fa-map-marker-alt"> <%= campsite.address %></p><br>
         <p class="card__text fa fa-clock"> <%= campsite.period %></p>
-      </div>
-      <div class="card__footer text-center">
-        <%= link_to campsite_path(campsite.id), class: "card__text btn btn-success" do %>
-        　　キャンプ場詳細　　
-        <% end %>
       </div>
     </article>
   </div>

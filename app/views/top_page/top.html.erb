@@ -1,11 +1,7 @@
-<body class="top-image">
-  <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-    <div class="d-flex justify-content-center">
-      <div class="text-center">
-        <h2 class="text-white mx-auto mt-2">無料キャンプ場をもっと身近に</h2>
-          <%= render 'shared/search_form', url: campsites_path, search: @search %>
-      </div>
-    </div>
-    <div class="underlay-photo-top"></div>
+<div class="top-wrapper">
+  <div class="top-inner-text">
+    <h2>無料キャンプ場を<br>もっと身近に利用しよう</h2>
+    <!--検索フォーム-->
+      <%= render 'shared/search_form', url: campsites_path, search: @search %>
   </div>
-</body>
+</div>

@@ -1,0 +1,15 @@
+<%= search_form_for search, url: url do |f| %>
+  <div class="input-group mt-4 mb-3 justify-content-md-center">
+    <div class="col-lg-5 col-sm-6 d-inline-block">
+      <%= f.search_field :name_or_address_or_description_or_access_cont, class: 'form-control', placeholder: "お気に入り内を検索" %>
+    </div>
+    <div class="col-lg-3 col-sm-4 d-inline-block">
+      <%= f.collection_select :prefecture_code_eq, JpPrefecture::Prefecture.all, :code, :name,
+      { include_blank: '都道府県を選択' }, { class: 'form-select text-muted' } %>
+    </div>
+    <div class="col-auto d-inline-block">
+      <%= f.button :type => "submit", :class =>"btn btn-success btn-s-md" do %>
+      <i class="fa fa-search px-2"></i>
+      <% end %>
+  </div>
+<% end %>

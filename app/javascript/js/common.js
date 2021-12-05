@@ -1,3 +1,4 @@
+// アバター画像アップロードの非同期更新
 window.previewImage = function() {
     const target = this.event.target;
     const file = target.files[0];
@@ -12,3 +13,16 @@ window.previewImage = function() {
         reader.readAsDataURL(file);
     }
 }
+
+// ヘッダーのデザイン
+window.addEventListener("scroll", function () {
+  // ヘッダーを変数の中に格納する
+  const header = document.querySelector("header");
+  // 80px以上スクロールしたらヘッダーに「scroll-nav」クラスをつける
+  header.classList.toggle("scroll-nav", window.scrollY > 80);
+});
+
+// フラッシュメッセージのフェードアウト
+$(function(){
+  setTimeout("$('#flash').fadeOut('slow')", 3000);
+});

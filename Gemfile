@@ -63,6 +63,7 @@ gem 'carrierwave', '2.0.2'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'kaminari'
 gem 'ransack'
+gem 'jp_prefecture'
 
 # login
 gem 'sorcery', '0.14.0'
