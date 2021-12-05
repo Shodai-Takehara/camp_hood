@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navigation navbar-light" id="mainNav">
-    <div class="container px-4 px-lg-5 mt-3">
-      <%= link_to root_path, class: "navbar-brand", 'data-turbolinks': false do %>
+    <div class="container px-lg-5 mt-3">
+      <%= link_to root_path, class: "navbar-brand logo", 'data-turbolinks': false do %>
         CAMPHOOD
       <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,8 +19,8 @@
               <i class="fas fa-list"></i> マイページ
             <% end %>
           </li>
-          <li class="nav-item small">
-            <%= link_to logout_path, method: :delete, data: { confirm: 'ログアウトしますか？' }, class: "nav-link" do %>
+          <li class="nav-item">
+            <%= link_to logout_path, method: :delete, data: { confirm: 'ログアウトしますか？' }, class: "nav-link small" do %>
               <i class="fas fa-user"></i> ログアウト
             <% end %>
           </li>
@@ -29,3 +29,6 @@
     </div>
   </nav>
 </header>
+
+<section class="section section-a">
+</section>

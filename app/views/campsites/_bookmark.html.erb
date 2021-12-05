@@ -1,10 +1,21 @@
-<%= link_to bookmarks_path(campsite_id: campsite.id),
-    id: "js-bookmark-button-for-campsite-#{campsite.id}",
-    method: :post,
-    class: "float-right",
-    remote: true,
-    data: {"turbolinks" => false} do %>
-  <div class="heart">
-    <span class="heart_hover">行きたい！</span>
-  </div>
+<% if logged_in? %>
+  <%= link_to bookmarks_path(campsite_id: campsite.id),
+      id: "js-bookmark-button-for-campsite-#{campsite.id}",
+      method: :post,
+      class: "float-right",
+      remote: true do %>
+    <div class="heart">
+      <span class="heart_hover">行きたい！</span>
+    </div>
+  <% end %>
+<% else %>
+  <%= link_to bookmarks_path(campsite_id: campsite.id),
+      id: "js-bookmark-button-for-campsite-#{campsite.id}",
+      class: "float-right",
+      remote: true,
+      data: { confirm: 'ログインが必要です' } do %>
+    <div class="heart">
+      <span class="heart_hover">行きたい！</span>
+    </div>
+  <% end %>
 <% end %>

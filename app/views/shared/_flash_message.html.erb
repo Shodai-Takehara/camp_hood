@@ -1,5 +1,5 @@
 <% flash.each do |message_type, message| %>
-  <div class="container px-lg-5 px-sm-5 alert alert-<%= message_type %>">
+  <div id="flash" class="flash-message container alert alert-<%= message_type %>">
     <i class="fas fa-check-circle"></i>
     <%= message %><button type="button" class="close" data-dismiss="alert">&times;</button>
   </div>

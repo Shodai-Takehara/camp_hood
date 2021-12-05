@@ -15,11 +15,14 @@
 </div>
   <div class="container col-lg-8">
     <h4 class="mycamp mt-5 mb-5">行きたいキャンプ場一覧</h4>
+    <div class="mt-3">
+      <%= render 'shared/search_form_mypage', url: mypage_campsites_path, search: @search %>
+    </div>
     <div class="row">
       <% if @bookmark_campsites.present? %>
         <%= render partial: "campsites/campsite", collection: @bookmark_campsites %>
       <% else %>
-        <h3>行きたいキャンプ場がまだありません。</h3>
+        <h4 class="mt-4">行きたいキャンプ場がまだありません。</h4>
       <% end %>
     </div>
       <%= paginate @bookmark_campsites %>

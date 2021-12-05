@@ -1,10 +1,13 @@
 <% content_for(:title, t('.title')) %>
-<div class="container px-4 px-lg-5 col-12">
+<div class="container px-4 px-lg-5 col-12 footerFixed">
   <div class="row">
+    <div class="mt-5">
+      <%= render 'shared/search_form_index', url: campsites_path, search: @search %>
+    </div>
     <% if @campsites.present? %>
       <%= render @campsites %>
     <% else %>
-      <h3><%= t '.danger' %></h3>
+      <h4 class="mt-5 text-center"><%= t '.danger' %></h4>
     <% end %>
   </div>
   <%= paginate @campsites %>

@@ -1,19 +1,60 @@
-.top-image {
-  background: image-url("bonfire.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  // background-size: cover;
-  background-attachment: scroll;
-  height: calc(100vh - 134px);
-  position: relative;
+h2 {
+  font-weight: bold !important;
+  color: #f8fcfb;
 }
 
-.underlay-photo-top {
-  animation: hue-rotate 12s infinite;
+.top-wrapper {
   background-image: image-url("bonfire.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: grayscale(30%);
-  z-index: -1;
+  position: relative;
+  height: 100vh;
+
+  .top-inner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    color: #f3f9f9;
+
+
+    @media screen and (max-width: 767px) {
+      font-size: 2.0rem;
+    }
+  }
 }
+@media screen and (max-width:992px) {
+  .collapse.show,
+  .collapsing {
+    position: absolute;
+    right: 15px;
+    top: 70px;
+    padding-left: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+  }
+}
+
+// ヘッダーのデザイン
+header.scroll-nav {
+  // 背景を白にする
+  background: #fff;
+  // コンテンツの背景が白でもナビゲーションだと分かりやすいように影をつける
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+// scroll-navクラスがヘッダーについたときに、ロゴとナビゲーションの文字を黒にする
+header.scroll-nav .logo,
+header.scroll-nav .nav-link {
+  color: #000 !important;
+}
+
+// .search-field::placeholder {
+//   font-size: 12px;
+// }
