@@ -64,6 +64,7 @@ gem 'font-awesome-sass', '~> 5.12.0'
 gem 'kaminari'
 gem 'ransack'
 gem 'jp_prefecture'
+gem 'fog-aws'
 
 # login
 gem 'sorcery', '0.14.0'
