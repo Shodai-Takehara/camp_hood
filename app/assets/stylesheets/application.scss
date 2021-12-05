@@ -68,12 +68,3 @@ header {
 footer {
   margin-top: auto;
 }
-
-// コンテンツの高さに応じてフッターの位置を調整
-.footerFixed{
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 70px;
-  box-sizing: border-box;
-  /* ↑ヘッダーやフッターを含むすべての要素の高さ＝min-height:100vhになるように指定 */
-}
