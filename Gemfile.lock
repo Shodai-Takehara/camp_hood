@@ -171,6 +171,7 @@ GEM
     font-awesome-sass (5.12.0)
       sassc (>= 1.11)
     formatador (0.3.0)
+    geocoder (1.7.0)
     globalid (0.5.2)
       activesupport (>= 5.0)
     i18n (1.8.10)
@@ -365,6 +366,7 @@ DEPENDENCIES
   config
   fog-aws
   font-awesome-sass (~> 5.12.0)
+  geocoder
   jbuilder (~> 2.7)
   jp_prefecture
   kaminari

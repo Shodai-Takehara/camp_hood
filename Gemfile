@@ -74,3 +74,6 @@ gem 'rails-i18n'
 
 # 定数管理
 gem 'config'
+
+#住所から緯度と経度を変換
+gem 'geocoder'
