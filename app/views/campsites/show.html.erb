@@ -1,7 +1,7 @@
 <% content_for(:title, t('.title')) %>
 <div class="container px-4 px-lg-5 mt-4 footerFixed">
   <div class="row">
-    <div class="col-xl-4 col-lg-6">
+    <div class="col-xl-4 col-lg-8">
       <%= image_tag @campsite.image.nil? ? "campsite.jpg" : @campsite.image, alt: "キャンプ場の写真", class: "rounded-4 float-left img-thumbnail img-responsive" %>
     </div>
     <div class="col-xl-8 col-lg-12">
@@ -19,6 +19,7 @@
             <tr>
                 <th scope="row"><%= t '.address' %></th>
                 <td><p><%= @campsite.address %></p></td>
+
             </tr>
             <tr>
                 <th scope="row"><%= t '.period' %></th>
@@ -50,6 +51,40 @@
             </tr>
         </tbody>
       </table>
+<div id='map' class="rounded mb-5"></div>
+   <style type="text/css">
+    #map {
+        height: 300px;
+        width: 100%;
+    }
+   </style>
+
+<script type="text/javascript">
+  function initMap() {
+    var test = {lat: <%= @campsite.latitude %>, lng: <%= @campsite.longitude %>};
+    var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 15,
+              center: test
+              });
+    var transitLayer = new google.maps.TransitLayer();
+    transitLayer.setMap(map);
+    var contentString = '住所：<%= @campsite.address %>';
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    var marker = new google.maps.Marker({
+                  position:test,
+                  map: map,
+                  title: contentString,
+                  icon: "https://maps.google.com/mapfiles/ms/micons/green-dot.png"
+                });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.dig(:google, :GOOGLE_MAP_API_KEY) %>&callback=initMap" async defer></script>
+
     </div>
   </div>
 </div>

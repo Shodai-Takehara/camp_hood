@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="bg-gray text-center mt-5">
-      <h4 class="text-center mt-4 mb-4">マイページ</h4>
+      <h5 class="text-center mt-4 mb-4"><i class="fas fa-sign-in-alt"></i> マイページ</h5>
       <div class="mt-4 mb-4">
         <%= image_tag current_user.avatar.url,
             class: 'rounded-circle',
@@ -22,7 +22,7 @@
       <% if @bookmark_campsites.present? %>
         <%= render partial: "campsites/campsite", collection: @bookmark_campsites %>
       <% else %>
-        <h4 class="mt-4">行きたいキャンプ場がまだありません。</h4>
+        <h5 class="mt-4 mb-4">行きたいキャンプ場がまだありません。</h5>
       <% end %>
     </div>
       <%= paginate @bookmark_campsites %>
