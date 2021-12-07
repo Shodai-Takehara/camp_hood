@@ -9,9 +9,9 @@ CarrierWave.configure do |config|
     config.fog_directory  = 'camp-hood' # バケット名
     config.fog_public = false
     config.fog_credentials = {
-      provider: 'aws',
-      aws_access_key_id: Rails.application.credentials.dig(:aws, :aws_access_key_id), # アクセスキー
-      aws_secret_access_key: Rails.application.credentials.dig(:aws, :aws_secret_access_key), # シークレットアクセスキー
+      provider: 'AWS',
+      aws_access_key_id: ENV['S3_ACCESS_KEY_ID'], # アクセスキー
+      aws_secret_access_key: ENV['S3_SECRET_ACCESS_KEY'], # シークレットアクセスキー
       region: 'ap-northeast-1', # リージョン
       path_style: true
     }
