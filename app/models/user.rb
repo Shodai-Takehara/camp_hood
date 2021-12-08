@@ -15,6 +15,8 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :reset_password_token, uniqueness: true, allow_nil: true
 
+  enum role: { general: 0, admin: 1 }
+
   def bookmark(campsite)
     bookmark_campsites << campsite
   end

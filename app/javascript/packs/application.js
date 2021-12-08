@@ -7,4 +7,3 @@ require("jquery")
 import 'bootstrap';
 import '../src/application';
 import '../js/common.js';
-// import '../js/javascript.js';

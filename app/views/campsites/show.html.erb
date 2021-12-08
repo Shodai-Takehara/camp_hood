@@ -2,7 +2,7 @@
 <div class="container px-4 px-lg-5 mt-4 footerFixed">
   <div class="row">
     <div class="col-xl-4 col-lg-8">
-      <%= image_tag @campsite.image.nil? ? "campsite.jpg" : @campsite.image, alt: "キャンプ場の写真", class: "rounded-4 float-left img-thumbnail img-responsive" %>
+      <%= image_tag @campsite.image.url, alt: "キャンプ場の写真", class: "rounded-4 float-left img-thumbnail img-responsive" %>
     </div>
     <div class="col-xl-8 col-lg-12">
       <table class="table text-muted">

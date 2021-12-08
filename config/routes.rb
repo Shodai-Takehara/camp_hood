@@ -21,6 +21,15 @@ Rails.application.routes.draw do
 
   resources :password_resets, only: %i[new create edit update]
 
+  namespace :admin do
+    root to: 'dashboards#index'
+    get 'login', to: 'user_sessions#new'
+    post 'login', to: 'user_sessions#create'
+    delete 'logout', to: 'user_sessions#destroy'
+    resources :users, only: %i[index show edit update destroy]
+    resources :campsites
+  end
+
   post "oauth/callback", to: "oauths#callback"
   get "oauth/callback", to: "oauths#callback"
   get "oauth/:provider", to: "oauths#oauth", as: :auth_at_provider

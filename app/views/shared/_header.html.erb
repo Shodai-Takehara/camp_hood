@@ -20,7 +20,7 @@
             <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to logout_path, method: :delete, data: { confirm: 'ログアウトしますか？' }, class: "nav-link small" do %>
+            <%= link_to logout_path, method: :delete, data: { confirm: t('defaults.message.logout') }, class: "nav-link small" do %>
               <i class="fas fa-user"></i> ログアウト
             <% end %>
           </li>
