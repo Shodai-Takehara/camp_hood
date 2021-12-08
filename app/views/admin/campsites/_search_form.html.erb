@@ -1,0 +1,16 @@
+<%= search_form_for @search, url: admin_campsites_path do |f| %>
+    <div class="row">
+        <div class="form-inline align-items-center mx-auto">
+            <div class="col-auto">
+              <%= f.search_field :name_or_address_or_description_cont, placeholder: t('defaults.search_word'), class:'form-control' %>
+            </div>
+            <div class="col-md-4 d-inline-block">
+              <%= f.collection_select :prefecture_code_eq, JpPrefecture::Prefecture.all, :code, :name,
+              { include_blank: '都道府県を選択' }, { class: 'form-control text-muted' } %>
+            </div>
+            <div class="col-auto">
+              <%= f.submit t('defaults.search'), class:'btn btn-primary ml-3' %>
+            </div>
+        </div>
+    </div>
+<% end %>

@@ -1,7 +1,15 @@
 ja:
+  enums:
+    user:
+      role:
+        general: '一般'
+        admin: '管理者'
+
   activerecord:
     models:
       user: 'ユーザー'
+      campsite: 'キャンプ場'
+      bookmark: '行きたいキャンプ場'
 
     attributes:
       user:
@@ -9,3 +17,25 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
+        avatar: 'アバター'
+        role: '権限'
+
+      campsite:
+        name: 'キャンプ場名'
+        address: '住所'
+        access: 'アクセス案内'
+        prefecture_code: '都道府県コード'
+        description: '施設情報'
+        period: '営業期間'
+        checkin: 'チェックイン'
+        checkout: 'チェックアウト'
+        phone: '電話番号'
+        contact_link: '問い合わせ先'
+        latitude: '緯度'
+        longitude: '経度'
+        image: 'キャンプ場画像'
+
+  attributes:
+    created_at: '作成日'
+    updated_at: '更新日'
+    id: 'ID'

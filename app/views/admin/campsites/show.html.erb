@@ -1,0 +1,79 @@
+<% content_for(:title, @campsite.name) %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t('.title') %></h1>
+      <div class="text-right mb-3">
+        <%= link_to t('defaults.index'), admin_campsites_path(@campsite), class:"btn btn-warning" %>
+        <%= link_to t('defaults.edit'), edit_admin_campsite_path(@campsite), class:"btn btn-success" %>
+        <%= link_to t('defaults.delete'), admin_campsite_path(@campsite), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class:"btn btn-danger" %>
+      </div>
+      <table class="table table-bordered bg-white">
+        <tbody>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:id) %></th>
+          <td><%= @campsite.id %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:name) %></th>
+          <td>
+            <%= @campsite.name %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:prefecture_code) %></th>
+          <td><%= @campsite.prefecture_code %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:address) %></th>
+          <td><%= @campsite.address %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:access) %></th>
+          <td><%= @campsite.access %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:description) %></th>
+          <td><%= @campsite.description %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:checkin) %></th>
+          <td><%= @campsite.checkin %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:checkout) %></th>
+          <td><%= @campsite.checkout %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:phone) %></th>
+          <td><%= @campsite.phone %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:contact_link) %></th>
+          <td><%= @campsite.contact_link %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:latitude) %></th>
+          <td><%= @campsite.latitude %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:longitude) %></th>
+          <td><%= @campsite.longitude %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:created_at) %></th>
+          <td><%= l @campsite.created_at, format: :long %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:updated_at) %></th>
+          <td><%= l @campsite.updated_at, format: :long %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:image) %></th>
+          <td><%= image_tag @campsite.image_url, class: 'rounded mb-3', width: '30%', height: '30%' %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

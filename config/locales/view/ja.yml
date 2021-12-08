@@ -4,6 +4,25 @@ ja:
     register: "登録"
     logout: "ログアウト"
     password_reset: "パスワードリセット"
+    unspecified: '権限'
+    search: '検索'
+    search_word: '検索ワードを入力'
+    show: '詳細'
+    delete: '削除'
+    edit: '編集'
+    index: '一覧'
+    new: '新規作成'
+    message:
+      require_login: 'ログインしてください'
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      deleted: "%{item}を削除しました"
+      delete_confirm: '削除しますか？'
+      password_reset: 'パスワードリセット手順を送信しました'
+      not_authorized: '権限がありません'
+      logout: 'ログアウトしますか？'
 
   users:
     new:
@@ -78,3 +97,32 @@ ja:
       previous: <i class="fas fa-angle-left"></i>
       next: <i class="fas fa-angle-right"></i>
       truncate: "..."
+
+  admin:
+    user_sessions:
+      new:
+        title: 'ログイン'
+      create:
+        success: 'ログインしました'
+        fail: 'ログインに失敗しました'
+      destroy:
+        success: 'ログアウトしました'
+    users:
+      index:
+        title: 'ユーザー一覧'
+      show:
+        title: 'ユーザー詳細'
+      edit:
+        title: 'ユーザー編集'
+    campsites:
+      index:
+        title: 'キャンプ場一覧'
+      new:
+        title: 'キャンプ場新規作成'
+      show:
+        title: 'キャンプ場詳細'
+      edit:
+        title: 'キャンプ場編集'
+    dashboards:
+      index:
+        title: 'ダッシュボード'

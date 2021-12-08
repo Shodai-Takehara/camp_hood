@@ -60,11 +60,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # views
 gem 'bootstrap', '~> 4.4.1'
 gem 'carrierwave', '2.0.2'
+gem 'enum_help'
+gem 'fog-aws'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'kaminari'
-gem 'ransack'
 gem 'jp_prefecture'
-gem 'fog-aws'
+gem 'ransack'
 
 # login
 gem 'sorcery', '0.14.0'

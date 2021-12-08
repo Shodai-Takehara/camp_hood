@@ -1,0 +1,91 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%= t('.title') %></h1>
+      <%= form_with model: @campsite, url: admin_campsites_path(@campsite), local: true do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="text-right mb-3">
+          <%= link_to t('defaults.index'), admin_campsites_path, class:"btn btn-warning" %>
+        </div>
+        <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :prefecture_code %>
+        <%= f.text_field :prefecture_code, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :address %>
+        <%= f.text_field :address, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :access %>
+        <%= f.text_area :access, class: "form-control", rows: "4" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control", rows: "6" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :period %>
+        <%= f.text_field :period, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :checkin %>
+        <%= f.text_field :checkin, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :checkout %>
+        <%= f.text_field :checkout, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :phone %>
+        <%= f.text_field :phone, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :contact_link %>
+        <%= f.text_field :contact_link, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :latitude %>
+        <%= f.text_field :latitude, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :longitude %>
+        <%= f.text_field :longitude, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :image %>
+      <%= f.file_field :image, onchange: 'previewImage()', class: 'form-control mb-4', accept: 'image/*' %>
+      <%= f.hidden_field :image_cache %>
+    </div>
+    <div class='mt-5 text-center'>
+    <%= image_tag @campsite.image_url,
+                  class: 'rounded mb-2',
+                  id: 'preview',
+                  width: '50%', height: '50%' %>
+    </div>
+      <%= f.submit class: 'btn btn-primary mb-3' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+window.previewImage = function() {
+    const target = this.event.target;
+    const file = target.files[0];
+    const reader  = new FileReader();
+    reader.onloadend = function () {
+        const preview = document.querySelector("#preview")
+        if(preview) {
+            preview.src = reader.result;
+        }
+    }
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
+</script>
