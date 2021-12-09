@@ -226,7 +226,6 @@ GEM
       rake
     mini_magick (4.11.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.6.1)
     minitest (5.14.4)
     msgpack (1.4.2)
     multi_json (1.15.0)
@@ -234,8 +233,7 @@ GEM
     multipart-post (2.1.1)
     mysql2 (0.5.3)
     nio4r (2.5.8)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
+    nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
     oauth (0.5.8)
     oauth2 (1.4.7)
@@ -360,7 +358,7 @@ GEM
     zeitwerk (2.5.1)
 
 PLATFORMS
-  ruby
+  x86_64-darwin-20
 
 DEPENDENCIES
   better_errors
@@ -396,8 +394,5 @@ DEPENDENCIES
   webdrivers
   webpacker (~> 4.0)
 
-RUBY VERSION
-   ruby 2.6.8p205
-
 BUNDLED WITH
-   1.17.2
+   2.2.33
