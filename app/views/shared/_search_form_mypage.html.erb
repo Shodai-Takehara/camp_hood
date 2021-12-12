@@ -5,7 +5,7 @@
     </div>
     <div class="col-lg-3 col-sm-4 d-inline-block">
       <%= f.collection_select :prefecture_code_eq, JpPrefecture::Prefecture.all, :code, :name,
-      { include_blank: '都道府県を選択' }, { class: 'form-select text-muted shadow' } %>
+      { include_blank: '都道府県を選択' }, { class: 'form-control text-muted shadow custom-select' } %>
     </div>
     <div class="col-auto d-inline-block">
       <%= f.button :type => "submit", :class =>"btn btn-success btn-s-md" do %>
