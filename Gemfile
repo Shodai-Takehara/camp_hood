@@ -78,3 +78,6 @@ gem 'config'
 
 #住所から緯度と経度を変換
 gem 'geocoder'
+
+#RailsとJavascriptの連携
+gem 'gon'

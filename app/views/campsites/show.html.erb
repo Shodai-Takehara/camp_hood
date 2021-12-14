@@ -1,90 +1,115 @@
 <% content_for(:title, t('.title')) %>
-<div class="container px-4 px-lg-5 mt-4 footerFixed">
+<div class="container mt-4 footerFixed">
   <div class="row">
-    <div class="col-xl-4 col-lg-8">
-      <%= image_tag @campsite.image.url, alt: "キャンプ場の写真", class: "rounded-4 float-left img-thumbnail img-responsive" %>
+    <div class="container backimage mb-5 text-center text-white">
+      <h3 class="mt-5 mb-3"><%= @campsite.name %></h3>
+      <h5><%= @campsite.prefecture.name %></h5>
+      <%# <%= image_tag @campsite.image.url, alt: "キャンプ場の写真", class: "rounded-4 float-left img-thumbnail img-responsive" %>
     </div>
-    <div class="col-xl-8 col-lg-12">
-      <table class="table text-muted">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col" style="width:20%"><%= t '.info' %></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row"><%= t '.name' %></th>
-                <td><h5><%= @campsite.name %></h5></td>
-            </tr>
-            <tr>
-                <th scope="row"><%= t '.address' %></th>
-                <td><p><%= @campsite.address %></p></td>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" style="width:25%"><%= t '.info' %></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"><i class="fas fa-fire"></i> <%= t '.name' %></th>
+                    <td><h5 class="text-muted"><%= @campsite.name %></h5></td>
+                </tr>
+                <tr>
+                    <th scope="row"><i class="fas fa-map-marked-alt"></i> <%= t '.address' %></th>
+                    <td><p class="text-muted"><%= @campsite.address %></p></td>
 
-            </tr>
-            <tr>
-                <th scope="row"><%= t '.period' %></th>
-                <td><p><%= @campsite.period %></p></td>
-            </tr>
-            <tr>
-                <th scope="row"><%= t '.checkin' %></th>
-                <td><p><%= @campsite.checkin %></p></td>
-            </tr>
-            <tr>
-                <th scope="row"><%= t '.checkout' %></th>
-                <td><p><%= @campsite.checkout %></p></td>
-            </tr>
-            <tr>
-                <th scope="row"><%= t '.access' %></th>
-                <td><p><%= @campsite.access %></p></td>
-            </tr>
-            <tr>
-                <th scope="row"><%= t '.description' %></th>
-                <td><p><%= @campsite.description %></p></td>
-            </tr>
-            <tr>
-                <th scope="row"><%= t '.phone' %></th>
-                <td class="link-color"><a href="tel:"><%= @campsite.phone %></a></td>
-            </tr>
-            <tr>
-                <th scope="row" class="link-color"><%= t '.contact_link' %></th>
-                <td class="link-color"><%= text_url_to_link(h(@campsite.contact_link)).html_safe %></td>
-            </tr>
-        </tbody>
-      </table>
-<div id='map' class="rounded mb-5"></div>
-   <style type="text/css">
-    #map {
-        height: 300px;
-        width: 100%;
-    }
-   </style>
+                </tr>
+                <tr>
+                    <th scope="row"><i class="far fa-calendar-alt"></i> <%= t '.period' %></th>
+                    <td><p class="text-muted"><%= @campsite.period %></p></td>
+                </tr>
+                <tr>
+                    <th scope="row"><i class="far fa-clock"></i> <%= t '.checkin' %></th>
+                    <td><p class="text-muted"><%= @campsite.checkin %></p></td>
+                </tr>
+                <tr>
+                    <th scope="row"><i class="fas fa-clock"></i> <%= t '.checkout' %></th>
+                    <td><p class="text-muted"><%= @campsite.checkout %></p></td>
+                </tr>
+                <tr>
+                    <th scope="row"><i class="fas fa-sign"></i> <%= t '.access' %></th>
+                    <td><p class="text-muted"><%= @campsite.access %></p></td>
+                </tr>
+                <tr>
+                    <th scope="row"><i class="fas fa-info-circle"></i> <%= t '.description' %></th>
+                    <td><p class="text-muted"><%= @campsite.description %></p></td>
+                </tr>
+                <tr>
+                    <th scope="row"><i class="fas fa-phone"></i> <%= t '.phone' %></th>
+                    <td class="link-color"><a href="tel:"><%= @campsite.phone %></a></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="link-color"><i class="fas fa-globe"></i> <%= t '.contact_link' %></th>
+                    <td class="link-color"><%= text_url_to_link(h(@campsite.contact_link)).html_safe %></td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-lg-5">
+          <div class="text-center">
+            <%= link_to "この無料キャンプ場に行く！", "#", class: 'btn btn-warning mt-2 mb-5 px-5' %>
+            <%= render 'bookmark_button', campsite: @campsite %>
+          </div>
+          <!-- Google Mapの表示 -->
+          <div id='map' class="mb-5"></div>
+        </div>
+      </div>
 
-<script type="text/javascript">
-  function initMap() {
-    var test = {lat: <%= @campsite.latitude %>, lng: <%= @campsite.longitude %>};
-    var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 15,
-              center: test
-              });
-    var transitLayer = new google.maps.TransitLayer();
-    transitLayer.setMap(map);
-    var contentString = '住所：<%= @campsite.address %>';
-    var infowindow = new google.maps.InfoWindow({
-      content: contentString
-    });
-    var marker = new google.maps.Marker({
-                  position:test,
-                  map: map,
-                  title: contentString,
-                  icon: "https://maps.google.com/mapfiles/ms/micons/green-dot.png"
-                });
-    marker.addListener('click', function() {
-      infowindow.open(map, marker);
-    });
-  }
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.dig(:google, :GOOGLE_MAP_API_KEY) %>&callback=initMap" async defer></script>
+      <section class="weather-section text-center">
+      <div class="container">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-lg-12">
+            <h3 class="mb-4 mt-3">キャンプ場の天気予報</h3>
+            <!--天気予報表示-->
+            <div id="openweather" class="d-flex mb-5"></div>
+          </div>
+      </div>
+      </section>
 
+      <style type="text/css">
+        #map {
+            height: 500px;
+            width: 100%;
+            border-radius: 8px;
+        }
+      </style>
+
+      <script type="text/javascript">
+        function initMap() {
+          var test = {lat: <%= @campsite.latitude %>, lng: <%= @campsite.longitude %>};
+          var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 15,
+                    center: test
+                    });
+          var transitLayer = new google.maps.TransitLayer();
+          transitLayer.setMap(map);
+          var contentString = '住所：<%= @campsite.address %>';
+          var infowindow = new google.maps.InfoWindow({
+            content: contentString
+          });
+          var marker = new google.maps.Marker({
+                        position:test,
+                        map: map,
+                        title: contentString,
+                        icon: "https://maps.google.com/mapfiles/ms/micons/green-dot.png"
+                      });
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+        }
+      </script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.dig(:google, :GOOGLE_MAP_API_KEY) %>&callback=initMap"></script>
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 # Be sure to restart your server when you modify this file.
+#sprocketsとwebpackerのコンパイルの並行処理をしないように設定
 Rails.application.config.assets.configure do |env|
   env.export_concurrent = false
 end

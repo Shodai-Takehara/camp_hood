@@ -77,3 +77,10 @@
 .link-color a:hover {
   color: #005731;
 }
+
+.backimage {
+  background-image: image-url("backimage.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 350px;
+}

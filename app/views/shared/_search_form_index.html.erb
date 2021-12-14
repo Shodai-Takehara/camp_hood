@@ -1,13 +1,13 @@
 <%= search_form_for search, url: url do |f| %>
-  <div class="form-group mt-4 mb-3 justify-content-md-center">
+  <div class="input-group justify-content-center">
     <div class="col-md-4 d-inline-block">
-      <%= f.search_field :name_or_address_or_description_or_access_cont, class: 'form-control shadow', placeholder: "検索ワードを入力" %>
+      <%= f.search_field :name_or_address_or_description_or_access_cont, class: 'form-control shadow mb-2', placeholder: "検索ワードを入力" %>
     </div>
     <div class="col-md-4 d-inline-block">
       <%= f.collection_select :prefecture_code_eq, JpPrefecture::Prefecture.all, :code, :name,
-      { include_blank: '都道府県を選択' }, { class: 'form-control text-muted shadow custom-select' } %>
+      { include_blank: '都道府県を選択' }, { class: 'form-control text-muted shadow custom-select mb-2' } %>
     </div>
-    <div class="col-auto d-inline-block">
+    <div class="col-auto d-inline-block mb-2">
       <%= f.button :type => "submit", :class =>"btn btn-success btn-s-md" do %>
       <i class="fa fa-search px-2"></i>
       <% end %>

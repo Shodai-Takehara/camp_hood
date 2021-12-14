@@ -12,7 +12,9 @@
       <div class="card__body">
       </div>
       <div class="card__footer text-center">
-        <%= render 'bookmark_button', campsite: campsite %>
+        <div>
+          <%= render 'bookmark_button', campsite: campsite %>
+        </div>
         <p class="card__text fas fa-map-marker-alt"> <%= campsite.address %></p><br>
         <p class="card__text fa fa-clock"> <%= campsite.period %></p>
       </div>

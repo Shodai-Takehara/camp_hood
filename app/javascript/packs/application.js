@@ -5,3 +5,4 @@ require("@rails/activestorage").start();
 require("channels");
 
 import "../js/common.js";
+import "../js/openweather_map.js";
