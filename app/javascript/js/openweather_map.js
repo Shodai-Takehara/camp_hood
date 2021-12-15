@@ -1,5 +1,5 @@
 // 渡された関数オブジェクトは、DOMの準備が完了した時に実行される。実行時に「jQuery」そのものを受け取る。
-$(function () {
+document.addEventListener("turbolinks:load", function() {
   if (typeof gon !== "undefined") {
     const key = gon.openweather_map_key;
     const lat = gon.latitude;
@@ -18,11 +18,10 @@ $(function () {
       $.ajax({
         url: openweather_url,
         dataType: "json",
-        type: "GET"
+        type: "GET",
       })
         .done(function (data) {
           let insertHTML = "";
-
           // 8の倍数でデータを取得することにより、24時間ごとの天気を取得する
           for (let i = 0; i <= 32; i = i + 8) {
             insertHTML += buildHTML(data, i);

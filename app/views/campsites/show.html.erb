@@ -9,7 +9,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-7">
-          <table class="table">
+          <table class="table table-responsive">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col" style="width:25%"><%= t '.info' %></th>
@@ -27,7 +27,7 @@
                 </tr>
                 <tr>
                     <th scope="row"><i class="far fa-calendar-alt"></i> <%= t '.period' %></th>
-                    <td><p class="text-muted"><%= @campsite.period %></p></td>
+                    <td><p class="text-muted" style="word-wrap:break-word;"><%= @campsite.period %></p></td>
                 </tr>
                 <tr>
                     <th scope="row"><i class="far fa-clock"></i> <%= t '.checkin' %></th>
@@ -39,19 +39,19 @@
                 </tr>
                 <tr>
                     <th scope="row"><i class="fas fa-sign"></i> <%= t '.access' %></th>
-                    <td><p class="text-muted"><%= @campsite.access %></p></td>
+                    <td><p class="text-muted" style="word-wrap:break-word;"><%= @campsite.access %></p></td>
                 </tr>
                 <tr>
                     <th scope="row"><i class="fas fa-info-circle"></i> <%= t '.description' %></th>
-                    <td><p class="text-muted"><%= @campsite.description %></p></td>
+                    <td><p class="text-muted" style="word-wrap:break-word;"><%= @campsite.description %></p></td>
                 </tr>
                 <tr>
                     <th scope="row"><i class="fas fa-phone"></i> <%= t '.phone' %></th>
                     <td class="link-color"><a href="tel:"><%= @campsite.phone %></a></td>
                 </tr>
                 <tr>
-                    <th scope="row" class="link-color"><i class="fas fa-globe"></i> <%= t '.contact_link' %></th>
-                    <td class="link-color"><%= text_url_to_link(h(@campsite.contact_link)).html_safe %></td>
+                    <th scope="row"><i class="fas fa-globe"></i> <%= t '.contact_link' %></th>
+                    <td class="link-color" style="word-wrap:break-word;"><%= text_url_to_link(h(@campsite.contact_link)).html_safe %></td>
                 </tr>
             </tbody>
           </table>
