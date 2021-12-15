@@ -39,9 +39,6 @@ h2 {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
     opacity: 0.8;
   }
-  .navbar-light .navbar-toggler {
-    border-color: rgba(0,0,0,0);
-}
 }
 
 // ヘッダーのデザイン
@@ -58,6 +55,21 @@ header.scroll-nav .nav-link {
   color: #000 !important;
 }
 
-// .search-field::placeholder {
-//   font-size: 12px;
-// }
+.breadcrumb{
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  // background-color: #f2f2f2;
+  font-size: 13px;
+  // width: auto !important;
+  // color: #28a745 !important;
+}
+
+.breadcrumb a {
+  color: #28a745;
+}
+
+.breadcrumb a:hover {
+  color: #005731;
+}
+

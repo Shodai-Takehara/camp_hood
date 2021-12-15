@@ -1,4 +1,4 @@
-// 渡された関数オブジェクトは、DOMの準備が完了した時に実行される。実行時に「jQuery」そのものを受け取る。
+// "turbolinks:load"を追記することで、リロードなしで天気を表示することが可能となった
 document.addEventListener("turbolinks:load", function() {
   if (typeof gon !== "undefined") {
     const key = gon.openweather_map_key;

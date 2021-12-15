@@ -1,7 +1,8 @@
 <% content_for(:title, t('.title')) %>
-<div class="container px-4 px-lg-5 col-12 footerFixed">
+<% breadcrumb :campsites %>
+<div class="container px-4 px-lg-5 footerFixed">
   <div class="row">
-    <div class="mt-5 col-lg-12">
+    <div class="mt-5 col-12">
       <%= render 'shared/search_form_index', url: campsites_path, search: @search %>
     </div>
     <% if @campsites.present? %>
