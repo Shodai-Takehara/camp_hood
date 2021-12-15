@@ -1,5 +1,5 @@
 <%= search_form_for search, url: url do |f| %>
-  <div class="input-group mt-4 justify-content-center">
+  <div class="input-group mt-2 justify-content-center">
     <div class="col-sm-4">
       <%= f.collection_select :prefecture_code_eq, JpPrefecture::Prefecture.all, :code, :name,
       { include_blank: '都道府県を選択' }, { class: 'form-control text-muted custom-select' } %>
