@@ -21,6 +21,8 @@
         <% unless controller.controller_name == "top_page" && controller.action_name == "top" %>
           <div style="height: 80px;"></div>
         <% end %>
+      <%= breadcrumbs pretext: "", separator: " &rsaquo; ", class: "breadcrumb text-black bg-transparent" %>
+      <!-- <%= breadcrumbs separator: " #{content_tag(:i, '', :class=>'fas fa-angle-double-right breadcrumb small')} " %> -->
       <%= render 'shared/flash_message' %>
       <div>
         <%= yield %>

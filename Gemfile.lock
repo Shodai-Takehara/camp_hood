@@ -185,6 +185,9 @@ GEM
       i18n (>= 0.7)
       multi_json
       request_store (>= 1.0)
+    gretel (4.3.0)
+      actionview (>= 5.1, < 7.0)
+      railties (>= 5.1, < 7.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.1)
@@ -413,6 +416,7 @@ DEPENDENCIES
   font-awesome-sass (~> 5.12.0)
   geocoder
   gon
+  gretel
   jbuilder (~> 2.7)
   jp_prefecture
   kaminari
