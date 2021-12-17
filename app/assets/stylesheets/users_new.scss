@@ -1,3 +1,9 @@
+#login, #signup, #useredit,
+#password_resets_new,
+#password_resets_edit {
+  height: 90vh;
+}
+
 input {
   ::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.7);

@@ -1,5 +1,5 @@
 <% content_for(:title, t('.title')) %>
-<div class="container">
+<div id="password_resets_edit" class="container">
   <div class="row">
     <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2 mt-3">
       <%= form_with model: @user, url: password_reset_path(@token), local: true, class: 'login-form mt-3' do |f| %>
