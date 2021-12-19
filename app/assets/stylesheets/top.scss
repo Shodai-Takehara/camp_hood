@@ -39,6 +39,9 @@ h2 {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
     opacity: 0.8;
   }
+  .navbar-light .navbar-toggler {
+    border-color: rgba(0,0,0,0);
+  }
 }
 
 // ヘッダーのデザイン
@@ -55,14 +58,12 @@ header.scroll-nav .nav-link {
   color: #000 !important;
 }
 
+// パンくずリスト
 .breadcrumb{
   position: absolute;
   top: 10%;
   left: 5%;
-  // background-color: #f2f2f2;
-  font-size: 13px;
-  // width: auto !important;
-  // color: #28a745 !important;
+  font-size: 12px;
 }
 
 .breadcrumb a {
@@ -73,3 +74,168 @@ header.scroll-nav .nav-link {
   color: #005731;
 }
 
+// footerデザイン
+#footer {
+  position: relative;
+  color: #fff;
+}
+#footer a {
+  text-decoration: none;
+  color: #fff;
+}
+#footer a:hover {
+  text-decoration: underline;
+}
+#footer .primary {
+  padding: 20px 20px;
+  background: #333;
+}
+#footer .secondary {
+  display: flex;
+  padding: 20px 20px;
+  background: #222;
+}
+
+@media screen and (max-width: 767px) {
+  #footer .primary {
+    padding: 20px 20px;
+    background: #333;
+  }
+  #footer .secondary {
+    display: block;
+    padding: 20px 20px;
+  }
+}
+
+/* footer-logo */
+
+#footer .logo {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+}
+@media screen and (max-width: 767px) {
+  #footer .logo {
+    font-size: 16px;
+  }
+}
+
+/* discription */
+
+.discription {
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .discription {
+    font-size: 12px;
+  }
+}
+
+/* navi */
+
+.navi-row {
+  display: flex;
+  margin-top: 10px;
+}
+#footer .navi {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#footer .navi li {
+  display: inline-block;
+  margin: 0 20px 0 0;
+  padding: 0;
+}
+#footer .navi li:first-child {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .navi-row {
+    display: block;
+    margin-top: 15px;
+  }
+  #footer .navi {
+    font-size: 12px;
+  }
+  #footer .navi li {
+    margin-top: 5px;
+    font-size: 12px;
+  }
+}
+
+/* sns-navi */
+
+#footer .sns-navi {
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+#footer .sns-navi li {
+  display: inline-block;
+  margin: 0 20px 0 0;
+  padding: 0;
+  font-size: 20px;
+}
+#footer .sns-navi li:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  #footer .sns-navi {
+    margin: 20px 0 0;
+    padding: 0;
+  }
+  #footer .sns-navi li {
+    margin: 0 20px 0 0;
+    padding: 0;
+    font-size: 18px;
+  }
+}
+
+/* sitenavi */
+
+#footer .sitenavi {
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#footer .sitenavi li {
+  display: inline-block;
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+#footer .sitenavi li:first-child {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 767px) {
+  #footer .sitenavi {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+/* copyright */
+
+#footer .copyright {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  #footer .copyright {
+    width: 100%;
+    margin: 10px 0 0;
+    text-align: center;
+    font-size: 12px;
+  }
+}

@@ -7,6 +7,11 @@ crumb :campsites do
   parent :root
 end
 
+crumb :campsites_pagination do |page|
+  link "#{page}ページ目", campsites_path(params[:page])
+  parent :campsites
+end
+
 crumb :campsite do |campsite|
   link "#{campsite.name}の詳細",  campsite_path(campsite)
   parent :campsites

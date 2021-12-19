@@ -1,12 +1,28 @@
-<footer id="footer" class="footer text-center" style="background-color: #e6e6e6; height:70px;">
-  <div class="container px-4 px-lg-5 text-white">
-    <div class="container pt-2 px-4 px-lg-5 text-white-50">
-      <%= link_to "#", class: 'text-white' do %>利用規約<% end %>
-      ｜
-      <%= link_to "#", class: 'text-white' do %>プライバシーポリシー<% end %>
-      ｜
-      <%= link_to '#', class: 'text-white' do %>お問い合わせ<% end %>
+<footer id="footer">
+  <section class="primary">
+    <p class="logo"><%= link_to root_path, 'data-turbolinks': false do %>CAMPHOOD<% end %></p>
+    <p class="discription">
+    全国の<b>無料キャンプ場</b>を検索できて、周辺施設や天気を案内するサービス
+    </p>
+    <div class="navi-row">
+      <ul class="navi">
+        <li><%= link_to terms_of_service_path do %>利用規約<% end %></li>
+        <li><%= link_to privacy_policy_path do %>プライバシーポリシー<% end %></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScWBUylYqqhGnD3ZNduB7uwRZxB1_oGv_qYXD5jhSVjyNFZkw/viewform" target="_blank" rel="noopener noreferrer">お問合わせ</a></li>
+        <li><%= link_to '#' do %>キャンプマナー<% end %></li>
+      </ul>
+      <ul class="sns-navi">
+        <!-- Twitter Share -->
+        <li><%= link_to "https://twitter.com/share?&url=http://www.camphood.net/&text=%0D%0A全国の無料キャンプ場を検索できて、周辺施設や天気を案内するサービス CAMPHOOD&hashtags=無料キャンプ場,キャンプ,camp,個人開発&lang=ja",
+        title: 'Twitter', target: :_blank, rel: 'noopener noreferrer', onfocus:"this.blur();" do %>
+        <i class="fab fa-twitter"></i><% end %></li>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <!-- Facebook Share -->
+        <li><a href="http://www.facebook.com/share.php?u=http://www.camphood.net/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a></li>
+      </ul>
     </div>
-    <p class="text-white">Copyright &copy; CAMPHOOD 2021.</p>
-  </div>
+  </section>
+  <section class="secondary">
+    <p class="copyright">Copyright &copy; CAMPHOOD 2021. All rights reserved.</p>
+  </section>
 </footer>

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   root 'top_page#top'
+  get 'terms_of_service', to: 'top_page#terms_of_service'
+  get 'privacy_policy', to: 'top_page#privacy_policy'
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'

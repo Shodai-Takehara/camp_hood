@@ -1,15 +1,15 @@
-/* 表示しているページ番号のデザイン */
+// 表示しているページ番号のデザイン
 .pagination > .active > a {
   background: #28a745 !important;
   border-radius: 30px;
 }
-/*ページネーション自体のデザイン*/
+// ページネーション自体のデザイン
 .pagination > li > a {
   border: none;
   color: #696969;
 }
 
-/*ホバー時のデザイン*/
+// ホバー時のデザイン
 .pagination > li > a:hover {
   border-radius: 30px;
   color: #005731;
@@ -18,4 +18,5 @@
 // ページネーションのセンタリング
 .pagination {
   justify-content: center;
+  margin-bottom: 30px;
 }
