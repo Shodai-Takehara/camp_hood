@@ -30,6 +30,16 @@ module ApplicationHelper
     end
   end
 
+  # ogp画像の設定
+  def og_image(page_image = '')
+    base_image = "https://camp-hood.s3.ap-northeast-1.amazonaws.com/uploads/ogp/ogp_image.png"
+    if page_image.empty?
+      base_image
+    else
+      page_image
+    end
+  end
+
   # def campsite_count
   #   Campsite.all.ids.count
   # end
