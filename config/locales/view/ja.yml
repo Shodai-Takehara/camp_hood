@@ -74,6 +74,8 @@ ja:
       contact_link: "問合わせ先"
     mypage:
       title: "マイページ"
+    guidance:
+      title: "キャンプ場案内"
 
   password_resets:
     new:

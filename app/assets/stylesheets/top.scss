@@ -239,3 +239,10 @@ header.scroll-nav .nav-link {
     font-size: 12px;
   }
 }
+
+.footerFixed {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}

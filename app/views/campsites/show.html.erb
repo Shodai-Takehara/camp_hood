@@ -59,7 +59,7 @@
         </div>
         <div class="col-lg-5">
           <div class="text-center">
-            <%= link_to "この無料キャンプ場に行く！", "#", class: 'btn btn-warning mt-2 mb-5 px-5' %>
+            <%= link_to "この無料キャンプ場に行く！", guidance_campsite_path, class: 'btn btn-warning mt-2 mb-5 px-5' %>
             <%= render 'bookmark_button', campsite: @campsite %>
           </div>
           <!-- Google Mapの表示 -->
@@ -78,32 +78,23 @@
       </div>
       </section>
 
-      <style type="text/css">
-        #map {
-            height: 500px;
-            width: 100%;
-            border-radius: 8px;
-        }
-      </style>
-
       <script type="text/javascript">
         function initMap() {
-          var test = {lat: <%= @campsite.latitude %>, lng: <%= @campsite.longitude %>};
-          var map = new google.maps.Map(document.getElementById('map'), {
+          let test = {lat: <%= @campsite.latitude %>, lng: <%= @campsite.longitude %>};
+          let map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 15,
                     center: test
                     });
-          var transitLayer = new google.maps.TransitLayer();
+          let transitLayer = new google.maps.TransitLayer();
           transitLayer.setMap(map);
-          var contentString = '住所：<%= @campsite.address %>';
-          var infowindow = new google.maps.InfoWindow({
+          let contentString = '住所：<%= @campsite.address %>';
+          let infowindow = new google.maps.InfoWindow({
             content: contentString
           });
-          var marker = new google.maps.Marker({
+          let marker = new google.maps.Marker({
                         position:test,
                         map: map,
                         title: contentString,
-                        icon: "https://maps.google.com/mapfiles/ms/micons/green-dot.png"
                       });
           marker.addListener('click', function() {
             infowindow.open(map, marker);

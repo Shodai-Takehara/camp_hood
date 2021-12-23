@@ -1,0 +1,36 @@
+#gmap {
+  height: 500px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+#msg {
+  text-align: center;
+  background-color: #28a745;
+  color: #fff;
+}
+
+.custom-button {
+  padding: 12px;
+  color: #fff;
+  border-top: 4px solid #48ecc4;
+  border-right: 4px solid #0a5f4a;
+  border-bottom: 4px solid #0f745b;
+  border-left: 4px solid #8cf9de;
+  border-radius: 0;
+  background: #28a745;
+}
+
+.custom-button:hover {
+  color: #fff;
+  border-top: 4px solid #0f745b;
+  border-right: 4px solid #8cf9de;
+  border-bottom: 4px solid #48ecc4;
+  border-left: 4px solid #0a5f4a;
+}
