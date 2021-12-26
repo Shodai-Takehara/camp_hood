@@ -66,42 +66,6 @@
           <div id='map' class="mb-5"></div>
         </div>
       </div>
-
-      <section class="weather-section text-center">
-      <div class="container">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-lg-12">
-            <h3 class="mb-4 mt-3">キャンプ場の天気予報</h3>
-            <!--天気予報表示-->
-            <div id="openweather" class="d-flex mb-5"></div>
-          </div>
-      </div>
-      </section>
-
-      <script type="text/javascript">
-        function initMap() {
-          let test = {lat: <%= @campsite.latitude %>, lng: <%= @campsite.longitude %>};
-          let map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 15,
-                    center: test
-                    });
-          let transitLayer = new google.maps.TransitLayer();
-          transitLayer.setMap(map);
-          let contentString = '住所：<%= @campsite.address %>';
-          let infowindow = new google.maps.InfoWindow({
-            content: contentString
-          });
-          let marker = new google.maps.Marker({
-                        position:test,
-                        map: map,
-                        title: contentString,
-                      });
-          marker.addListener('click', function() {
-            infowindow.open(map, marker);
-          });
-        }
-      </script>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.dig(:google, :GOOGLE_MAP_API_KEY) %>&callback=initMap"></script>
     </div>
   </div>
 </div>
