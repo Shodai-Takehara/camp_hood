@@ -9,7 +9,7 @@ document.addEventListener("turbolinks:load", window.initMap = function() {
   let test = { lat, lng };
   if (document.getElementById("map")) {
       map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 10,
+      zoom: 11,
       center: test,
       mapTypeId: "roadmap"
     });
