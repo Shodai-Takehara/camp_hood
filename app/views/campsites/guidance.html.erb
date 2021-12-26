@@ -56,4 +56,29 @@
       <!--天気予報表示-->
       <div id="openweather" class="d-flex mb-5"></div>
     </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-12">
+      <h4 class="mb-3 mt-3"><i class="fas fa-campground">&nbsp;おすすめのテント情報</i></h4>
+      <h6 class="mb-3">※ 無料キャンプ場を利用し続けると憧れのあのテントを購入できます!!</h6>
+      <!--Rakuten Tent表示-->
+      <div class="card-deck mb-3 text-center">
+      <% @tents.each do |tent| %>
+        <div class="card mb-4 shadow-sm border-info">
+          <div class="card-img-top">
+            <%= image_tag tent[:image_url], size: "100x100" %>
+          </div>
+          <div class="card-body">
+            <%= link_to tent[:name], tent[:url], target: '_blank', rel: "nofollow noopener noreferrer" %>
+          </div>
+          <div class="card-footer bg-change">
+            <%= "価格：" + tent[:price].to_i.to_s(:delimited) + "円" %><br>
+            <%= "評価：" + tent[:score] %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
