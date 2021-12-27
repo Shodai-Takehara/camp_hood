@@ -62,9 +62,9 @@
   <div class="row gx-4 gx-lg-5 justify-content-center">
     <div class="col-12">
       <h4 class="mb-3 mt-3"><i class="fas fa-hotel">&nbsp;キャンプ場周辺のホテル情報</i></h4>
-      <h6 class="mb-3">※ 道中、豪雨に見舞われた際は周辺のホテル利用も視野に入れましょう。</h6>
+      <h6 class="mb-3">道中、豪雨に見舞われた際は周辺のホテル利用も視野に入れましょう。</h6>
       <!--Rakuten Travel表示-->
-      <div class="card-deck mb-3">
+      <div class="card-deck mb-3 text-center">
       <% if @hotels.present? %>
         <% @hotels.each do |hotel| %>
           <div class="card mb-4 shadow-sm border-info">
@@ -76,12 +76,14 @@
               <%= hotel[:address1] + hotel[:address2] %>
             </div>
             <div class="card-footer bg-change">
-              <%= hotel[:review].to_s == "0" || hotel[:review].to_s.empty? ? "評価：なし" : "総合評価：" + hotel[:review].to_s + "(投稿件数：" + hotel[:review_count].to_s + "件)" %>
+              <%=  hotel[:review].to_s.empty? || hotel[:review].to_s == "0.0" ? "評価：なし" : "総合評価：" + hotel[:review].to_s + "(投稿件数：" + hotel[:review_count].to_s + "件)" %>
             </div>
           </div>
         <% end %>
       <% else %>
-        <h6>キャンプ場周辺にホテルはありませんでした。引き返しましょう。</h6>
+        <div class="col-12">
+          <h6 class="font-weight-bold mt-3 mb-3">キャンプ場周辺にホテルはありませんでした。当日悪天候なら引き返しましょう。</h6>
+        </div>
       <% end %>
       </div>
     </div>
@@ -91,7 +93,7 @@
   <div class="row gx-4 gx-lg-5">
     <div class="col-12">
       <h4 class="mb-3 mt-3"><i class="fas fa-campground">&nbsp;おすすめのテント情報</i></h4>
-      <h6 class="mb-3">※ コスパの良い無料キャンプ場を利用し続けると憧れのテントを購入できます!!</h6>
+      <h6 class="mb-3">コスパの良い無料キャンプ場を利用し続けると憧れのテントを購入できます!!</h6>
       <!--Rakuten Tent表示-->
       <div class="card-deck mb-3">
       <% @tents.each do |tent| %>
@@ -104,10 +106,36 @@
           </div>
           <div class="card-footer bg-change">
             <%= "価格：" + tent[:price].to_i.to_s(:delimited) + "円" %><br>
-            <%= "評価：" + tent[:score] %>
+            <%= tent[:count] == 0 ? "評価：なし" : "評価：" + tent[:score] %>
           </div>
         </div>
       <% end %>
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row gx-4 gx-lg-5">
+    <div class="col-12">
+      <h4 class="mb-3 mt-3"><i class="fas fa-book">&nbsp;おすすめのキャンプ雑誌</i></h4>
+      <h6 class="mb-3">雑誌を読んで物欲を掻き立てましょう!!</h6>
+      <!--Rakuten Books表示-->
+      <div class="card-deck mb-3">
+      <% @books.each do |book| %>
+        <div class="card mb-4 shadow-sm border-info">
+          <div class="card-img-top">
+            <%= image_tag book[:image_url] %>
+          </div>
+          <div class="card-body">
+            <%= link_to book[:name], book[:url], target: '_blank', rel: "nofollow noopener noreferrer" %><br>
+            <%= "出版社：" + book[:publisher] %>
+          </div>
+          <div class="card-footer bg-change">
+            <%= "価格：" + book[:price].to_i.to_s(:delimited) + "円" %><br>
+            <%= book[:sales].empty? ? "発売日：不明" : "発売日：" + book[:sales] %>
+          </div>
+        </div>
+      <% end %>
+      </div>
     </div>
   </div>
 </div>

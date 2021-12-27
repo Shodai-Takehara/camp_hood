@@ -4,7 +4,7 @@ class CampsitesController < ApplicationController
 
   skip_before_action :require_login, only: %i[index show guidance]
   before_action :set_campsite, :set_lat_long_name, only: %i[show guidance]
-  before_action :set_key_openweather_map, :get_rakuten_tent, :get_rakuten_hotel, only: %i[guidance]
+  before_action :set_key_openweather_map, :get_rakuten_tent, :get_rakuten_hotel, :get_rakuten_books, only: %i[guidance]
 
   def index
     @search = Campsite.ransack(params[:q])
@@ -44,7 +44,7 @@ class CampsitesController < ApplicationController
     rakuten_tent = JSON.parse(response_tent.read)
     get_tent = []
     rakuten_tent["Items"].first(20).each do |tent|
-      get_tent << { name: tent["Item"]["itemName"], url: tent["Item"]["itemUrl"], image_url: tent["Item"]["smallImageUrls"][0]["imageUrl"], price: tent["Item"]["itemPrice"], score: tent["Item"]["reviewAverage"] }
+      get_tent << { name: tent["Item"]["itemName"], url: tent["Item"]["itemUrl"], image_url: tent["Item"]["smallImageUrls"][0]["imageUrl"], price: tent["Item"]["itemPrice"], score: tent["Item"]["reviewAverage"], count: tent["Item"]["reviewCount"]}
     end
     @tents = get_tent.sample(4)
   end
@@ -65,5 +65,17 @@ class CampsitesController < ApplicationController
     rescue
       @hotels = []
     end
+  end
+
+  def get_rakuten_books
+    api_key = Rails.application.credentials.rakuten[:key]
+    rakuten_books_url = "https://app.rakuten.co.jp/services/api/BooksTotal/Search/20170404?format=json&keyword=%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%97&booksGenreId=001&applicationId=#{ api_key }"
+    response_books = URI.open(rakuten_books_url)
+    rakuten_books = JSON.parse(response_books.read)
+    get_book = []
+    rakuten_books["Items"].first(20).each do |book|
+      get_book << { name: book["Item"]["title"], url: book["Item"]["itemUrl"], image_url: book["Item"]["mediumImageUrl"], price: book["Item"]["itemPrice"], sales: book["Item"]["salesDate"], publisher: book["Item"]["publisherName"] }
+    end
+    @books = get_book.sample(4)
   end
 end
