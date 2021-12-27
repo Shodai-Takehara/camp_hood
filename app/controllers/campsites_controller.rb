@@ -4,7 +4,7 @@ class CampsitesController < ApplicationController
 
   skip_before_action :require_login, only: %i[index show guidance]
   before_action :set_campsite, :set_lat_long_name, only: %i[show guidance]
-  before_action :set_key_openweather_map, :get_rakuten_tent, only: %i[guidance]
+  before_action :set_key_openweather_map, :get_rakuten_tent, :get_rakuten_hotel, only: %i[guidance]
 
   def index
     @search = Campsite.ransack(params[:q])
@@ -40,7 +40,6 @@ class CampsitesController < ApplicationController
   def get_rakuten_tent
     api_key = Rails.application.credentials.rakuten[:key]
     rakuten_tent_url = "https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20170628?format=json&genreId=302373&applicationId=#{ api_key }"
-    rakuten_hotel_url = "https://app.rakuten.co.jp/services/api/Travel/SimpleHotelSearch/20170426?format=json&datumType=1&latitude=#{ @campsite.latitude }&longitude=#{ @campsite.longitude }&applicationId=#{ api_key }"
     response_tent = URI.open(rakuten_tent_url)
     rakuten_tent = JSON.parse(response_tent.read)
     get_tent = []
@@ -48,5 +47,23 @@ class CampsitesController < ApplicationController
       get_tent << { name: tent["Item"]["itemName"], url: tent["Item"]["itemUrl"], image_url: tent["Item"]["smallImageUrls"][0]["imageUrl"], price: tent["Item"]["itemPrice"], score: tent["Item"]["reviewAverage"] }
     end
     @tents = get_tent.sample(4)
+  end
+
+  def get_rakuten_hotel
+    api_key = Rails.application.credentials.rakuten[:key]
+    begin
+      rakuten_hotel_url = "https://app.rakuten.co.jp/services/api/Travel/SimpleHotelSearch/20170426?format=json&datumType=1&latitude=#{ @campsite.latitude }&longitude=#{ @campsite.longitude }&applicationId=#{ api_key }&searchRadius=3"
+      response_hotel = URI.open(rakuten_hotel_url)
+      rakuten_hotel = JSON.parse(response_hotel.read)
+      count = rakuten_hotel["hotels"].length > 4 ? 4 : rakuten_hotel["hotels"].length
+      get_hotel = []
+      rakuten_hotel["hotels"].first(count).each do |hotel|
+        get_hotel << { name: hotel["hotel"][0]["hotelBasicInfo"]["hotelName"], url: hotel["hotel"][0]["hotelBasicInfo"]["hotelInformationUrl"], image_url: hotel["hotel"][0]["hotelBasicInfo"]["hotelImageUrl"],
+        review: hotel["hotel"][0]["hotelBasicInfo"]["reviewAverage"], review_count: hotel["hotel"][0]["hotelBasicInfo"]["reviewCount"], address1: hotel["hotel"][0]["hotelBasicInfo"]["address1"], address2: hotel["hotel"][0]["hotelBasicInfo"]["address2"] }
+      end
+      @hotels = get_hotel
+    rescue
+      @hotels = []
+    end
   end
 end

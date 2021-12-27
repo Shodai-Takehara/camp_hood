@@ -61,10 +61,39 @@
 <div class="container text-center">
   <div class="row gx-4 gx-lg-5 justify-content-center">
     <div class="col-12">
+      <h4 class="mb-3 mt-3"><i class="fas fa-hotel">&nbsp;キャンプ場周辺のホテル情報</i></h4>
+      <h6 class="mb-3">※ 道中、豪雨に見舞われた際は周辺のホテル利用も視野に入れましょう。</h6>
+      <!--Rakuten Travel表示-->
+      <div class="card-deck mb-3">
+      <% if @hotels.present? %>
+        <% @hotels.each do |hotel| %>
+          <div class="card mb-4 shadow-sm border-info">
+            <div class="card-img-top">
+              <%= image_tag hotel[:image_url], size: "100x100" %>
+            </div>
+            <div class="card-body">
+              <%= link_to hotel[:name], hotel[:url], target: '_blank', rel: "nofollow noopener noreferrer" %><br>
+              <%= hotel[:address1] + hotel[:address2] %>
+            </div>
+            <div class="card-footer bg-change">
+              <%= hotel[:review].to_s == "0" || hotel[:review].to_s.empty? ? "評価：なし" : "総合評価：" + hotel[:review].to_s + "(投稿件数：" + hotel[:review_count].to_s + "件)" %>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <h6>キャンプ場周辺にホテルはありませんでした。引き返しましょう。</h6>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row gx-4 gx-lg-5">
+    <div class="col-12">
       <h4 class="mb-3 mt-3"><i class="fas fa-campground">&nbsp;おすすめのテント情報</i></h4>
-      <h6 class="mb-3">※ 無料キャンプ場を利用し続けると憧れのあのテントを購入できます!!</h6>
+      <h6 class="mb-3">※ コスパの良い無料キャンプ場を利用し続けると憧れのテントを購入できます!!</h6>
       <!--Rakuten Tent表示-->
-      <div class="card-deck mb-3 text-center">
+      <div class="card-deck mb-3">
       <% @tents.each do |tent| %>
         <div class="card mb-4 shadow-sm border-info">
           <div class="card-img-top">
@@ -82,3 +111,4 @@
     </div>
   </div>
 </div>
+
