@@ -1,5 +1,5 @@
 // "turbolinks:load"を追記することで、リロードなしで天気を表示することが可能となった
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("turbolinks:load", window.openWeather = function() {
   if (typeof gon !== "undefined") {
     const key = gon.openweather_map_key;
     const lat = gon.latitude;
@@ -55,9 +55,9 @@ function buildHTML(data, i) {
   const html =
   '<div class="weather-report mx-auto">' +
     '<img src="https://openweathermap.org/img/w/' + icon + '.png">' +
-    '<div class="weather-date">' + day + "</div>" +
-    '<div class="weather-temp-max">' + '最高：' + Math.round(data.list[i].main.temp_max) + "℃</div>" +
-    '<div class="weather-temp-min">' + '最低：' + Math.floor(data.list[i].main.temp_min) + "℃</div>" +
+    '<div class="weather-date mb-2">' + day + "</div>" +
+    '<div class="weather-font">' + '<span class="weather-temp-max">最高：</span>' + Math.round(data.list[i].main.temp_max) + "℃</div>" +
+    '<div class="weather-font">' + '<span class="weather-temp-min">最低：</span>' + Math.floor(data.list[i].main.temp_min) + "℃</div>" +
   '</div>';
   return html;
 }

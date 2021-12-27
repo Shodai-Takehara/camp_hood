@@ -1,25 +1,31 @@
 crumb :root do
-  link '<i class="fas fa-home"></i> トップ '.html_safe, root_path
+  link '<i class="fas fa-home"></i>トップ&nbsp;'.html_safe, root_path
 end
 
 crumb :campsites do
-  link "キャンプ場一覧", campsites_path
+  link "&nbsp;キャンプ場一覧&nbsp;".html_safe, campsites_path
   parent :root
 end
 
 crumb :campsites_pagination do |page|
-  link "#{page}ページ目", campsites_path(params[:page])
+  link "&nbsp;#{page}ページ目&nbsp;".html_safe, campsites_path(params[:page])
   parent :campsites
 end
 
 crumb :campsite do |campsite|
-  link "#{campsite.name}の詳細",  campsite_path(campsite)
+  campsite = Campsite.find(params[:id])
+  link "&nbsp;#{campsite.name}の詳細&nbsp;".html_safe,  campsite_path(campsite)
   parent :campsites
 end
 
 crumb :mypage do |user|
-  link "#{current_user.name}さんのページ", mypage_campsites_path(user)
+  link "&nbsp;#{current_user.name}さんのページ&nbsp;".html_safe, mypage_campsites_path(user)
   parent :campsites
+end
+
+crumb :guidance do |campsite|
+  link "&nbsp;詳細案内".html_safe
+  parent :campsite
 end
 
 # crumb :login do

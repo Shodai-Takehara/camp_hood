@@ -85,3 +85,23 @@
   height: 350px;
   margin-top: 21px;
 }
+
+// 天気予報のサイズと色の指定
+@media screen and (max-width:990px) {
+  .weather-font,
+  .weather-date {
+    font-size: small;
+  }
+}
+
+.weather-temp-max {
+  color: red;
+}
+
+.weather-temp-min {
+  color: blue;
+}
+
+.bg-change {
+  background-color: #a0c4d3;
+}

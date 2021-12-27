@@ -5,7 +5,7 @@
     <div class="container backimage mb-5 text-center text-white">
       <h3 class="mt-5 mb-3"><%= @campsite.name %></h3>
       <h5><%= @campsite.prefecture.name %></h5>
-      <%# <%= image_tag @campsite.image.url, alt: "キャンプ場の写真", class: "rounded-4 float-left img-thumbnail img-responsive" %>
+      <!-- <%= image_tag @campsite.image.url, alt: "キャンプ場の写真", class: "rounded-4 float-left img-thumbnail img-responsive" %> -->
     </div>
     <div class="container">
       <div class="row">
@@ -59,58 +59,22 @@
         </div>
         <div class="col-lg-5">
           <div class="text-center">
-            <%= link_to "この無料キャンプ場に行く！", "#", class: 'btn btn-warning mt-2 mb-5 px-5' %>
+            <%= link_to "この無料キャンプ場に行く！", guidance_campsite_path, class: 'btn btn-warning mt-2 mb-5 px-5' %>
             <%= render 'bookmark_button', campsite: @campsite %>
           </div>
           <!-- Google Mapの表示 -->
           <div id='map' class="mb-5"></div>
+          <div class="text-center">
+            <%= link_to "https://twitter.com/share?url=#{request.url}&text=無料キャンプ場を検索できて、周辺施設や天気を案内するサービス/&hashtags=キャンプ,無料キャンプ場,#{@campsite.prefecture.name}の無料キャンプ場",
+            title: 'Twitter', target: '_blank', rel: "nofollow noopener noreferrer", class: "mr-5" do %>
+              <i class="fab fa-twitter fa-lg"></i>
+            <% end %>
+            <!--<%= link_to "https://www.facebook.com/sharer/sharer.php?u=https://www.camphood.net/&t=", target: "_blank", rel: "nofollow noopener noreferrer" do %>
+              <i class="fab fa-facebook fa-lg"></i>
+            <% end %>-->
+          </div>
         </div>
       </div>
-
-      <section class="weather-section text-center">
-      <div class="container">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-lg-12">
-            <h3 class="mb-4 mt-3">キャンプ場の天気予報</h3>
-            <!--天気予報表示-->
-            <div id="openweather" class="d-flex mb-5"></div>
-          </div>
-      </div>
-      </section>
-
-      <style type="text/css">
-        #map {
-            height: 500px;
-            width: 100%;
-            border-radius: 8px;
-        }
-      </style>
-
-      <script type="text/javascript">
-        function initMap() {
-          var test = {lat: <%= @campsite.latitude %>, lng: <%= @campsite.longitude %>};
-          var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 15,
-                    center: test
-                    });
-          var transitLayer = new google.maps.TransitLayer();
-          transitLayer.setMap(map);
-          var contentString = '住所：<%= @campsite.address %>';
-          var infowindow = new google.maps.InfoWindow({
-            content: contentString
-          });
-          var marker = new google.maps.Marker({
-                        position:test,
-                        map: map,
-                        title: contentString,
-                        icon: "https://maps.google.com/mapfiles/ms/micons/green-dot.png"
-                      });
-          marker.addListener('click', function() {
-            infowindow.open(map, marker);
-          });
-        }
-      </script>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.dig(:google, :GOOGLE_MAP_API_KEY) %>&callback=initMap"></script>
     </div>
   </div>
 </div>

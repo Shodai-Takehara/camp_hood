@@ -15,7 +15,7 @@
           <%= f.text_field :name, class: 'login-username fa small', placeholder: "\uf007 User Name", autofocus: 'true', required: 'true' %>
         </div>
         <div class="form-group">
-          <%= f.email_field :email, class: 'login-username fa small', placeholder: "\uf0e0 Email", autofocus: 'true', required: 'true' %>
+          <%= f.email_field :email, class: 'login-username fa small', placeholder: "\uf0e0 Email", required: 'true' %>
         </div>
         <div class="form-group">
           <%= f.file_field :avatar, onchange: 'previewImage()', class: 'form-control form-control-sm mt-5 mb-4', accept: 'image/*' %>

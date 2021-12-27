@@ -15,13 +15,13 @@
           <%= f.text_field :name, class: 'login-username fa small', placeholder: "\uf007 User Name", autofocus: 'true', required: 'true' %>
         </div>
         <div class="form-group">
-          <%= f.email_field :email, class: 'login-username fa small', placeholder: "\uf0e0 Email", autofocus: 'true', required: 'true' %>
+          <%= f.email_field :email, class: 'login-username fa small', placeholder: "\uf0e0 Email", required: 'true' %>
         </div>
         <div class="form-group">
-          <%= f.password_field :password, class: 'login-password fa small', placeholder: "\uf084 Password", autofocus: 'true', required: 'true' %>
+          <%= f.password_field :password, class: 'login-password fa small', placeholder: "\uf084 Password", required: 'true' %>
         </div>
         <div class="form-group">
-          <%= f.password_field :password_confirmation, class: 'login-password fa small', placeholder: "\uf084 Password再確認", autofocus: 'true', required: 'true' %>
+          <%= f.password_field :password_confirmation, class: 'login-password fa small', placeholder: "\uf084 Password再確認", required: 'true' %>
         </div>
         <%= f.submit class: 'login-submit px-3' %>
       <% end %>
