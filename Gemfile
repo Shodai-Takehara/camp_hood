@@ -66,6 +66,7 @@ gem 'font-awesome-sass', '~> 5.12.0'
 gem 'gretel' #パンクズリスト
 gem 'kaminari'
 gem 'jp_prefecture'
+gem 'meta-tags' #メタタグ管理
 gem 'ransack'
 
 # login
@@ -77,8 +78,8 @@ gem 'rails-i18n'
 # 定数管理
 gem 'config'
 
-#住所から緯度と経度を変換
+# 住所から緯度と経度を変換
 gem 'geocoder'
 
-#RailsとJavascriptの連携
+# RailsとJavascriptの連携
 gem 'gon'
