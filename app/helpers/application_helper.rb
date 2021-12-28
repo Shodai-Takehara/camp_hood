@@ -21,7 +21,7 @@ module ApplicationHelper
     text
   end
 
-  #パンクズリストの1ページ目のviewの分岐
+  # パンクズリストの1ページ目のviewの分岐
   def breadcrumb_pagination
     if params[:page].nil? || params[:page] == 1
       breadcrumb :campsites
@@ -30,14 +30,39 @@ module ApplicationHelper
     end
   end
 
-  # ogp画像の設定
-  def og_image(page_image = '')
-    base_image = "https://camp-hood.s3.ap-northeast-1.amazonaws.com/uploads/ogp/ogp_image.png"
-    if page_image.empty?
-      base_image
-    else
-      page_image
-    end
+  # # ogp画像の設定
+  # def og_image(page_image = '')
+  #   base_image = "https://camp-hood.s3.ap-northeast-1.amazonaws.com/uploads/ogp/ogp_image.png"
+  #   if page_image.empty?
+  #     base_image
+  #   else
+  #     page_image
+  #   end
+  # end
+
+  # meta-tags設定
+  def default_meta_tags
+    {
+      site: :CAMPHOOD,
+      charset: 'utf-8',
+      description: :全国の無料キャンプ場を検索できて、周辺施設や天気を案内するサービス,
+      canonical: request.original_url,
+      icon: { href: image_url('favicon.ico') },
+      og: {
+        site_name: :CAMPHOOD,
+        description: :全国の無料キャンプ場を検索できて、周辺施設や天気を案内するサービス,
+        type: 'website',
+        url: request.original_url,
+        image: image_url('ogp_image.png'),
+      },
+      twitter: {
+        card: 'summary_large_image',
+        site: '@42_ogi',
+      },
+      fb: {
+        app_id: Rails.application.credentials.dig(:sorcery, :facebook, :key)
+      }
+    }
   end
 
   # def campsite_count

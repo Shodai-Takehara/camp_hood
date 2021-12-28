@@ -5,19 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta property="og:locale" content="ja_JP" />
-    <meta property="og:title" content="<%= page_title(yield(:title)) %>" />
-    <meta property="og:description" content="全国の無料キャンプ場を検索できて、周辺施設や天気を案内するサービス" />
-    <meta property="og:url" content="<%= request.url %>" />
-    <meta property="og:image" content="<%= og_image(yield(:og_image)) %>" />
-    <meta property="og:site_name" content="CAMPHOOD" />
-    <meta property="og:type" content="article" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@42_ogi" />
-    <meta name="twitter:image" content="<%= og_image(yield(:og_image)) %>" />
-    <meta name="twitter:title" content="<%= page_title(yield(:title)) %>" />
-    <meta name="twitter:description" content="全国の無料キャンプ場を検索できて、周辺施設や天気を案内するサービス" />
-
+    <%= display_meta_tags(default_meta_tags) %>
+    <meta property="<%= Rails.application.credentials.dig(:sorcery, :facebook, :key) %>" content="<%= Rails.application.credentials.dig(:sorcery, :facebook, :key) %>" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= include_gon %>
