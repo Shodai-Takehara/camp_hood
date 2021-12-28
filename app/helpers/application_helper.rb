@@ -43,14 +43,14 @@ module ApplicationHelper
   # meta-tags設定
   def default_meta_tags
     {
-      site: :CAMPHOOD,
+      site: 'CAMPHOOD',
       charset: 'utf-8',
-      description: :全国の無料キャンプ場を検索できて、周辺施設や天気を案内するサービス,
+      description: '全国の無料キャンプ場を検索できて、周辺施設や天気を案内するサービス',
       canonical: request.original_url,
       icon: { href: image_url('favicon.ico') },
       og: {
-        site_name: :CAMPHOOD,
-        description: :全国の無料キャンプ場を検索できて、周辺施設や天気を案内するサービス,
+        site_name: 'CAMPHOOD',
+        description: '全国の無料キャンプ場を検索できて、周辺施設や天気を案内するサービス',
         type: 'website',
         url: request.original_url,
         image: image_url('ogp_image.png'),
