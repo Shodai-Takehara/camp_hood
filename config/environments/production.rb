@@ -66,6 +66,21 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # 本番環境のメール設定
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    port:                 587,
+    address:              'smtp.sendgrid.net',
+    domain:               'www.camphood.net',
+    user_name:            Rails.application.credentials.dig(:sendgrid, :user_name),
+    password:             Rails.application.credentials.dig(:sendgrid, :password),
+    authentication:       'login',
+    enable_starttls_auto: true
+  }
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
