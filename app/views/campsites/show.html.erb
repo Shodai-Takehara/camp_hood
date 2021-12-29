@@ -66,9 +66,8 @@
           <!-- Google Mapの表示 -->
           <div id='map' class="mb-5"></div>
           <div class="text-center">
-            <%= link_to "https://twitter.com/share?url=#{request.url}&text=無料キャンプ場を検索できて、周辺施設や天気を案内するサービス/&hashtags=キャンプ,無料キャンプ場,#{@campsite.prefecture.name}の無料キャンプ場",
-            title: 'Twitter', target: '_blank', rel: "nofollow noopener noreferrer", class: "mr-5" do %>
-              <i class="fab fa-twitter fa-lg"></i>
+            <%= link_to "https://twitter.com/share?url=#{request.original_url}&hashtags=キャンプ,無料キャンプ場,#{@campsite.prefecture.name}の無料キャンプ場,#{@campsite.name}",
+            title: 'Twitter', target: '_blank', rel: "nofollow noopener noreferrer", class: "twitter-share-button" do %>
             <% end %>
             <!--<%= link_to "https://www.facebook.com/sharer/sharer.php?u=https://www.camphood.net/&t=", target: "_blank", rel: "nofollow noopener noreferrer" do %>
               <i class="fab fa-facebook fa-lg"></i>
