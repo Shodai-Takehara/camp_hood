@@ -8,4 +8,9 @@ class UserMailer < ApplicationMailer
     mail(to: user.email,
          subject: t('defaults.password_reset'))
   end
+
+  def welcome(user)
+    @user = User.find(user.id)
+    mail(to: user.email, subject: t('defaults.users_new'))
+  end
 end

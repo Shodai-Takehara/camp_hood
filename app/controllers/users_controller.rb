@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to login_path, success: t('.success')
+      UserMailer.welcome(@user).deliver_now
     else
       flash.now[:danger] = t('.fail')
       render :new

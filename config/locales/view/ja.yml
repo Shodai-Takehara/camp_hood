@@ -12,6 +12,8 @@ ja:
     edit: '編集'
     index: '一覧'
     new: '新規作成'
+    users_new: 'ご登録ありがとうございます。'
+
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
