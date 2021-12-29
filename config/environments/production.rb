@@ -75,8 +75,8 @@ Rails.application.configure do
     port:                 587,
     address:              'smtp.sendgrid.net',
     domain:               'www.camphood.net',
-    user_name:            Rails.application.credentials.dig(:sendgrid, :user_name),
-    password:             Rails.application.credentials.dig(:sendgrid, :password),
+    user_name:            ENV['SENDGRID_USERNAME'],
+    password:             ENV['SENDGRID_PASSWORD'],
     authentication:       'login',
     enable_starttls_auto: true
   }
