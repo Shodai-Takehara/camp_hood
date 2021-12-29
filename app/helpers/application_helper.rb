@@ -44,23 +44,29 @@ module ApplicationHelper
   def default_meta_tags
     {
       site: 'CAMPHOOD',
+      title: '無料キャンプ場をもっと身近に利用しよう',
       charset: 'utf-8',
       description: '全国の無料キャンプ場を検索できて、周辺施設や天気を案内するサービス',
-      canonical: request.original_url,
+      keywords:    "CAMP,無料キャンプ場,BBQ,キャンプ,キャンプ飯",
+      canonical: request.original_url, # 優先されるurl
+      # noindex: ! Rails.env.production?, # 本番環境以外はnoindex
       icon: { href: image_url('favicon.ico') },
       og: {
-        site_name: 'CAMPHOOD',
-        description: '全国の無料キャンプ場を検索できて、周辺施設や天気を案内するサービス',
+        site_name: :site,
+        title: :title,
+        description: :description,
         type: 'website',
         url: request.original_url,
         image: image_url('ogp_image.png'),
+        locale: 'ja_JP',
       },
       twitter: {
         card: 'summary_large_image',
         site: '@42_ogi',
+        image: image_url('ogp_image.png'),
       },
       fb: {
-        app_id: Rails.application.credentials.dig(:sorcery, :facebook, :key)
+        app_id: Rails.application.credentials.dig(:sorcery, :facebook, :key),
       }
     }
   end
