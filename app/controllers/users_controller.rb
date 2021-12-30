@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: %i[new create]
+  skip_before_action :require_login, only: %i[new create destroy]
 
   def new
     @user = User.new
@@ -14,6 +14,12 @@ class UsersController < ApplicationController
       flash.now[:danger] = t('.fail')
       render :new
     end
+  end
+
+  def destroy
+    @user = User.find(current_user.id)
+    @user.destroy!
+    redirect_to root_path, danger: t('defaults.message.quited')
   end
 
   private
