@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
 
-  resources :users, only: %i[new create]
-  resource :profile, only: %i[show edit update]
+  resources :users, only: %i[new create destroy]
+  resource :profile, only: %i[edit update]
 
   resources :campsites, only: %i[index show guidance] do
     collection do

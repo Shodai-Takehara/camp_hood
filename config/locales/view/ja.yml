@@ -13,6 +13,7 @@ ja:
     index: '一覧'
     new: '新規作成'
     users_new: 'ご登録ありがとうございます。'
+    quit: '退会する'
 
     message:
       require_login: 'ログインしてください'
@@ -21,10 +22,12 @@ ja:
       updated: "%{item}を更新しました"
       not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
+      quited: '退会しました'
       delete_confirm: '削除しますか？'
       password_reset: 'パスワードリセット手順を送信しました'
       not_authorized: '権限がありません'
       logout: 'ログアウトしますか？'
+      quit: '退会するとデータは全て削除されます。退会しますか？'
 
   users:
     new:

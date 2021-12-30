@@ -18,7 +18,7 @@
           <%= f.email_field :email, class: 'login-username fa small', placeholder: "\uf0e0 Email", required: 'true' %>
         </div>
         <div class="form-group">
-          <%= f.file_field :avatar, onchange: 'previewImage()', class: 'form-control form-control-sm mt-5 mb-4', accept: 'image/*' %>
+          <%= f.file_field :avatar, onchange: 'previewImage()', class: 'login-username mt-4 mb-4 small', accept: 'image/*' %>
           <%= f.hidden_field :avatar_cache %>
         </div>
         <div class='mt-5 text-center'>
@@ -27,7 +27,10 @@
                       id: 'preview',
                       size: '120x120' %>
         </div>
-        <%= f.submit class: 'login-submit mt-5 px-3' %>
+        <div class="text-center">
+          <%= f.submit class: 'login-submit mt-5 px-3' %>
+          <%= link_to t('defaults.quit'), user_path(@user), method: :delete, data: { confirm: t('defaults.message.quit') }, class:"btn btn-danger mt-3 px-3 rounded-0" %>
+        </div>
       <% end %>
       <div class="underlay-photo"></div>
       <div class="underlay-black"></div>

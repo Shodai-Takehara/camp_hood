@@ -114,7 +114,7 @@ Rails.application.config.sorcery.configure do |config|
   #
   config.facebook.key = Rails.application.credentials.dig(:sorcery, :facebook, :key)
   config.facebook.secret = Rails.application.credentials.dig(:sorcery, :facebook, :secret)
-  config.facebook.callback_url = "https://localhost:9292/oauth/callback?provider=facebook"
+  config.facebook.callback_url = Settings.facebook_callback_url.host
   config.facebook.user_info_path = "me?fields=email, last_name, picture.type(large)"
   config.facebook.user_info_mapping = {email: "email", name: "last_name", remote_avatar_url: "picture/data/url" }
   config.facebook.access_permissions = ["email"]
