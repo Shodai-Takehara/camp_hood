@@ -62,10 +62,7 @@
           <div class="text-center">
             <%= link_to "この無料キャンプ場に行く！", guidance_campsite_path, class: 'btn btn-warning mt-2 mb-5 px-5' %>
             <%= render 'bookmark_button', campsite: @campsite %>
-          </div>
-          <!-- Google Mapの表示 -->
-          <div id='map' class="mb-5"></div>
-          <div class="text-center">
+          <div class="mb-5">
             <%= link_to "https://twitter.com/share?url=#{request.original_url}&hashtags=キャンプ,無料キャンプ場,#{@campsite.prefecture.name}の無料キャンプ場,#{@campsite.name}",
             title: 'Twitter', target: '_blank', rel: "nofollow noopener noreferrer", class: "twitter-share-button" do %>
             <% end %>
@@ -73,6 +70,9 @@
               <i class="fab fa-facebook fa-lg"></i>
             <% end %>-->
           </div>
+          </div>
+          <!-- Google Mapの表示 -->
+          <div id='map' class="mb-5"></div>
         </div>
       </div>
     </div>
