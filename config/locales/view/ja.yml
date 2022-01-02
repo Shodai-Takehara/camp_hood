@@ -53,6 +53,7 @@ ja:
     callback:
       success: "Facebookでログインしました"
       fail: "Facebookでのログインに失敗しました"
+      cancel: "Facebookログインをキャンセルしました"
 
   profiles:
     edit:
