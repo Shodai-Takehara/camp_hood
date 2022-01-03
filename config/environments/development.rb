@@ -33,19 +33,19 @@ Rails.application.configure do
 
   # メーラーデフォルトURL指定
   # config.action_mailer.default_url_options = { host: 'localhost:9292' }
-  config.action_mailer.default_url_options = Settings.default_url_options.to_h
-  # config.action_mailer.delivery_method = :letter_opener_web
-  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.default_url_options = Settings.default_url_options.to_h
+  config.action_mailer.delivery_method = :letter_opener_web
+  # config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.smtp_settings = {
-    port:                 587,
-    address:              'smtp.gmail.com',
-    domain:               'smtp.gmail.com',
-    user_name:            Rails.application.credentials.dig(:mailer, :mail_address),
-    password:             Rails.application.credentials.dig(:mailer, :app_password),
-    authentication:       'login',
-    enable_starttls_auto: true
-  }
+  # config.action_mailer.smtp_settings = {
+  #   port:                 587,
+  #   address:              'smtp.gmail.com',
+  #   domain:               'smtp.gmail.com',
+  #   user_name:            Rails.application.credentials.dig(:mailer, :mail_address),
+  #   password:             Rails.application.credentials.dig(:mailer, :app_password),
+  #   authentication:       'login',
+  #   enable_starttls_auto: true
+  # }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true

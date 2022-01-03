@@ -116,7 +116,7 @@ function displayResults(results, status, pagination) {
         let content = "【評価:" + rating + "】 " + place.name + " （住所:" + place.vicinity + "） ";
 
       // クリック時にMapにマーカー表示するようにボタンタグを作成
-      resultHTML += "<li>" +
+      resultHTML += "<li style=\"list-style: none;\">" +
                   "<button class=\"results_button\"" +
                   " onclick=\"createMarker(" +
                   "'" + place.name + "'," +
