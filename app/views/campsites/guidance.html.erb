@@ -68,7 +68,7 @@
       <div class="card-deck mb-3 text-center">
       <% if @hotels.present? %>
         <% @hotels.each do |hotel| %>
-          <div class="card mb-4 shadow-sm border-info">
+          <div class="card mb-4 shadow-sm border-info mx-auto" style="min-width: 15rem; max-width: 30rem;">
             <div class="card-img-top">
               <%= image_tag hotel[:image_url], size: "100x100" %>
             </div>
@@ -98,7 +98,7 @@
       <!--Rakuten Tent表示-->
       <div class="card-deck mb-3">
       <% @tents.each do |tent| %>
-        <div class="card mb-4 shadow-sm border-info">
+        <div class="card mb-4 shadow-sm border-info" style="min-width: 15rem;">
           <div class="card-img-top">
             <%= image_tag tent[:image_url], size: "100x100" %>
           </div>
@@ -122,7 +122,7 @@
       <!--Rakuten Books表示-->
       <div class="card-deck mb-3">
       <% @books.each do |book| %>
-        <div class="card mb-4 shadow-sm border-info">
+        <div class="card mb-4 shadow-sm border-info" style="min-width: 15rem;">
           <div class="card-img-top">
             <%= image_tag book[:image_url] %>
           </div>
