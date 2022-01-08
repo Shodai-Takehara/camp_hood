@@ -46,7 +46,8 @@ function buildHTML(data, i) {
     "(金)",
     "(<span style='color: blue;'>土</span>)"
   );
-  const date = new Date(data.list[i].dt_txt);
+  const strDate = data.list[i].dt_txt;
+  const date = new Date(strDate.replace(/-/g, "/")); // iOSでNanと表示されるため、yyyy-mm-dd -> yyyy/mm/ddへ変換する
   date.setHours(date.getHours() + 9); // UTCとの時差を無くす(日本は-9時間のため9を足す)
   const month = date.getMonth() + 1; // getMonth()は0~11を返すため1を足すことによって1月~12月を返すように設定
   const day = month + "/" + date.getDate() + Week[date.getDay()];
