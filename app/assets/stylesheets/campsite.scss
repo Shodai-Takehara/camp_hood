@@ -89,19 +89,39 @@
 // 天気予報のサイズと色の指定
 @media screen and (max-width:990px) {
   .weather-font,
-  .weather-date {
+  .weather-date,
+  .weather-description,
+  .weather-time {
     font-size: small;
   }
 }
 
 .weather-temp-max {
-  color: red;
+  color: #ff4500;
 }
 
 .weather-temp-min {
-  color: blue;
+  color: rgb(0,65,255);
 }
 
 .bg-change {
   background-color: #a0c4d3;
+}
+
+.weather-section {
+  padding: 10px 10px;
+  width: 100%;
+  background-color: #f2f2f2;
+  overflow-x: auto;
+  white-space: nowrap;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.weather-time {
+  font-weight: bold;
+}
+
+.weather-report {
+  padding-left: 30px;
+  margin-right: 50px;
 }
