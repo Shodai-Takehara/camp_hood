@@ -59,6 +59,7 @@
 .card__footer {
   padding: 1rem;
   border-top: 2px solid #ddd;
+  position: relative;
 }
 
 @media screen and (max-width:990px) {
@@ -79,6 +80,7 @@
 }
 
 .backimage {
+  position: relative;
   background-image: image-url("backimage.jpg");
   background-position: center center;
   background-size: cover;
@@ -124,4 +126,27 @@
 .weather-report {
   padding-left: 30px;
   margin-right: 50px;
+}
+
+.likebutton {
+  position: absolute;
+  top: 11%;
+  right: 4%;
+}
+
+
+@media screen and (min-width:992px) {
+  .index-likebutton {
+    position: absolute;
+    top: 51%;
+    right: 3%;
+  }
+}
+
+@media screen and (max-width:990px) {
+  .index-likebutton {
+    position: absolute;
+    top: 12%;
+    right: 5%;
+  }
 }

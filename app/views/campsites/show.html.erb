@@ -4,6 +4,9 @@
 <div class="container mt-4 footerFixed">
   <div class="row">
     <div class="container backimage mb-5 text-center text-white">
+      <div class="likebutton">
+        <%= render 'bookmark_button', campsite: @campsite %>
+      </div>
       <h3 class="mt-5 mb-3"><%= @campsite.name %></h3>
       <h5><%= @campsite.prefecture.name %></h5>
     </div>
@@ -66,10 +69,10 @@
             <%= link_to "https://twitter.com/share?url=#{request.original_url}&hashtags=キャンプ,無料キャンプ場,#{@campsite.prefecture.name}の無料キャンプ場,#{@campsite.name}",
             target: '_blank', rel: "nofollow noopener noreferrer", class: "fab fa-twitter fa-lg align-middle" do %>
             <% end %>
-            <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{url_encode(request.original_url)}", target: "_blank", rel: "nofollow noopener noreferrer" do %>
+            <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{url_encode(request.original_url)}", target: "_blank", rel: "nofollow noopener noreferrer", class: "js-sns-link" do %>
               <i class="fab fa-facebook fa-lg align-top"></i>
             <% end %>
-            <%= link_to "http://line.me/R/msg/text/?#{request.original_url}", target: "_blank", rel: "nofollow noopener noreferrer", style: "color: #00B900;" do %>
+            <%= link_to "https://line.me/R/msg/text/?#{request.original_url}", target: "_blank", rel: "nofollow noopener noreferrer", style: "color: #00B900;" do %>
               <i class="fab fa-line fa-lg align-top"></i>
             <% end %>
           </div>
