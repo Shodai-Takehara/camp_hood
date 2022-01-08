@@ -12,7 +12,7 @@ crumb :campsites_pagination do |page|
   parent :campsites
 end
 
-crumb :campsite do |campsite|
+crumb :campsite do
   campsite = Campsite.find(params[:id])
   link "&nbsp;#{campsite.name}の詳細&nbsp;".html_safe,  campsite_path(campsite)
   parent :campsites
@@ -23,7 +23,7 @@ crumb :mypage do |user|
   parent :campsites
 end
 
-crumb :guidance do |campsite|
+crumb :guidance do
   link "&nbsp;詳細案内".html_safe
   parent :campsite
 end

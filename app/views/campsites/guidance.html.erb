@@ -50,12 +50,12 @@
     </div>
   </div>
 </div>
-<div class="container weather-section text-center">
+<div class="container text-center">
   <div class="row gx-4 gx-lg-5 justify-content-center">
     <div class="col-12">
-      <h4 class="mb-3 mt-3"><i class="fas fa-cloud-sun">&nbsp;キャンプ場の天気予報</i></h4>
+      <h4 class="mb-3 mt-3"><i class="fas fa-cloud-sun">&nbsp;キャンプ場の天気予報(5日間)</i></h4>
       <!--天気予報表示-->
-      <div id="openweather" class="d-flex mb-5"></div>
+      <div id="openweather" class="d-flex mb-5 weather-section"></div>
     </div>
   </div>
 </div>
@@ -68,7 +68,7 @@
       <div class="card-deck mb-3 text-center">
       <% if @hotels.present? %>
         <% @hotels.each do |hotel| %>
-          <div class="card mb-4 shadow-sm border-info">
+          <div class="card mb-4 shadow-sm border-info mx-auto" style="min-width: 15rem; max-width: 30rem;">
             <div class="card-img-top">
               <%= image_tag hotel[:image_url], size: "100x100" %>
             </div>
@@ -98,7 +98,7 @@
       <!--Rakuten Tent表示-->
       <div class="card-deck mb-3">
       <% @tents.each do |tent| %>
-        <div class="card mb-4 shadow-sm border-info">
+        <div class="card mb-4 shadow-sm border-info" style="min-width: 15rem;">
           <div class="card-img-top">
             <%= image_tag tent[:image_url], size: "100x100" %>
           </div>
@@ -122,7 +122,7 @@
       <!--Rakuten Books表示-->
       <div class="card-deck mb-3">
       <% @books.each do |book| %>
-        <div class="card mb-4 shadow-sm border-info">
+        <div class="card mb-4 shadow-sm border-info" style="min-width: 15rem;">
           <div class="card-img-top">
             <%= image_tag book[:image_url] %>
           </div>

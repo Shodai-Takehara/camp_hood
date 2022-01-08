@@ -33,10 +33,10 @@
   animation-timing-function: steps(28);
 }
 
-.heart:hover .heart_hover {
+.heart .heart_hover {
   transition: 0.8s;                 /* インライン要素として表示 */
   display: inline;
-  background-color: rgba(242, 100, 5, 1.0) ;  /* 背景色（透明度） */
+  background-color: rgba(242, 100, 5, 0.9);  /* 背景色（透明度） */
   color: rgba(255, 255, 255, 0.8);
 }
 .heart_hover {
@@ -45,7 +45,7 @@
   background-color: rgba(35, 12, 12, 0.0) ;  /* 背景色（透明度） */
   width: 150%;                          /* 吹き出し全体の幅 */
   left : -30%;                           /* 表示位置 */
-  top : 80%;                           /* 表示位置 */
+  top : 65%;                           /* 表示位置 */
   font-size: 70%;                       /* 文字サイズ */
   color: rgba(255, 255, 255, 0.0);
 }

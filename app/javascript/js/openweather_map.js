@@ -12,7 +12,7 @@ document.addEventListener("turbolinks:load", window.openWeather = function() {
         lat +
         "&lon=" +
         lng +
-        "&units=metric&appid=" +
+        "&units=metric&lang=ja&appid=" +
         key;
 
       $.ajax({
@@ -23,7 +23,7 @@ document.addEventListener("turbolinks:load", window.openWeather = function() {
         .done(function (data) {
           let insertHTML = "";
           // 8の倍数でデータを取得することにより、24時間ごとの天気を取得する
-          for (let i = 0; i <= 32; i = i + 8) {
+          for (let i = 0; i <= 32; i += 2) {
             insertHTML += buildHTML(data, i);
           }
           $("#openweather").html(insertHTML);
@@ -38,24 +38,28 @@ document.addEventListener("turbolinks:load", window.openWeather = function() {
 // 日本語化 最高気温は四捨五入、最低気温は切り捨て
 function buildHTML(data, i) {
   const Week = new Array(
-    "(日)",
+    "(<span style='color: red;'>日</span>)",
     "(月)",
     "(火)",
     "(水)",
     "(木)",
     "(金)",
-    "(土)"
+    "(<span style='color: blue;'>土</span>)"
   );
   const date = new Date(data.list[i].dt_txt);
   date.setHours(date.getHours() + 9); // UTCとの時差を無くす(日本は-9時間のため9を足す)
   const month = date.getMonth() + 1; // getMonth()は0~11を返すため1を足すことによって1月~12月を返すように設定
   const day = month + "/" + date.getDate() + Week[date.getDay()];
-  const icon = data.list[i].weather[0].icon;
+  const time = date.getHours();
+  const description = data.list[i].weather[0].description;
+  const icon = data.list[i].weather[0].icon.slice(0, -1) + 'd'; // 夜の太陽マークが分かりにくため、末尾のn(night)を削除し、d(datetime)を追加して太陽マークを表示する
   // const pop = Math.round(data.list[i].pop * 100);
   const html =
-  '<div class="weather-report mx-auto">' +
+  '<div class="weather-report">' +
     '<img src="https://openweathermap.org/img/w/' + icon + '.png">' +
+    '<div class="weather-description mb-2">' + description + "</div>" +
     '<div class="weather-date mb-2">' + day + "</div>" +
+    '<div class="weather-time mb-2">' + time + " : 00" + "</div>" +
     '<div class="weather-font">' + '<span class="weather-temp-max">最高：</span>' + Math.round(data.list[i].main.temp_max) + "℃</div>" +
     '<div class="weather-font">' + '<span class="weather-temp-min">最低：</span>' + Math.floor(data.list[i].main.temp_min) + "℃</div>" +
   '</div>';
