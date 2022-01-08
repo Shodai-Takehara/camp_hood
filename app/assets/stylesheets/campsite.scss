@@ -135,21 +135,12 @@
 }
 
 
-@media screen and (min-width:992px) {
-  .index-likebutton {
-    position: absolute;
-    top: 51%;
-    right: 3%;
-  }
+.index-likebutton {
+  position: absolute;
+  top: 51%;
+  right: 3%;
 }
 
-@media screen and (max-width:990px) {
-  .index-likebutton {
-    position: absolute;
-    top: 12%;
-    right: 5%;
-  }
-}
 
 .btn-gradient-3d-orange {
   display: inline-block;
