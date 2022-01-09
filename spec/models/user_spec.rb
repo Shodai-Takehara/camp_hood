@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   let(:user) { build(:user) }
 
   describe 'ユーザー新規作成のテスト' do
-    fit 'nameとemailとpassword,password再確認が入力されていればOK' do
+    it 'nameとemailとpassword,password再確認が入力されていればOK' do
       expect(user).to be_valid
       expect(user.errors).to be_empty
     end
