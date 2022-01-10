@@ -24,7 +24,7 @@ crumb :mypage do |user|
 end
 
 crumb :guidance do
-  link "&nbsp;詳細案内".html_safe
+  link "&nbsp;周辺案内".html_safe
   parent :campsite
 end
 

@@ -22,7 +22,7 @@ document.addEventListener("turbolinks:load", window.openWeather = function() {
       })
         .done(function (data) {
           let insertHTML = "";
-          // 8の倍数でデータを取得することにより、24時間ごとの天気を取得する
+          // 2の倍数でデータを取得することにより、6時間ごとの天気を取得する
           for (let i = 0; i <= 32; i += 2) {
             insertHTML += buildHTML(data, i);
           }
@@ -46,7 +46,8 @@ function buildHTML(data, i) {
     "(金)",
     "(<span style='color: blue;'>土</span>)"
   );
-  const date = new Date(data.list[i].dt_txt);
+  const strDate = data.list[i].dt_txt;
+  const date = new Date(strDate.replace(/-/g, "/")); // iOSでNaNと表示されるため、yyyy-mm-dd -> yyyy/mm/ddへ変換する
   date.setHours(date.getHours() + 9); // UTCとの時差を無くす(日本は-9時間のため9を足す)
   const month = date.getMonth() + 1; // getMonth()は0~11を返すため1を足すことによって1月~12月を返すように設定
   const day = month + "/" + date.getDate() + Week[date.getDay()];
@@ -57,9 +58,9 @@ function buildHTML(data, i) {
   const html =
   '<div class="weather-report">' +
     '<img src="https://openweathermap.org/img/w/' + icon + '.png">' +
-    '<div class="weather-description mb-2">' + description + "</div>" +
     '<div class="weather-date mb-2">' + day + "</div>" +
     '<div class="weather-time mb-2">' + time + " : 00" + "</div>" +
+    '<div class="weather-description mb-2">' + description + "</div>" +
     '<div class="weather-font">' + '<span class="weather-temp-max">最高：</span>' + Math.round(data.list[i].main.temp_max) + "℃</div>" +
     '<div class="weather-font">' + '<span class="weather-temp-min">最低：</span>' + Math.floor(data.list[i].main.temp_min) + "℃</div>" +
   '</div>';

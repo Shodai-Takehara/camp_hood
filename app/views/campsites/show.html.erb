@@ -62,8 +62,7 @@
         </div>
         <div class="col-lg-5">
           <div class="text-center mb-5 mt-4">
-            <%= link_to "この無料キャンプ場の周辺案内を行う", guidance_campsite_path, class: 'btn-gradient-3d-orange w-100 px-5' %>
-            <%# <%= render 'bookmark_button', campsite: @campsite %>
+            <%= link_to "この無料キャンプ場の周辺案内を行う", guidance_campsite_path, class: 'btn-gradient-3d-orange w-100' %>
           </div>
           <div class="d-flex justify-content-around mb-5">
             <%= link_to "https://twitter.com/share?url=#{request.original_url}&hashtags=キャンプ,無料キャンプ場,#{@campsite.prefecture.name}の無料キャンプ場,#{@campsite.name}",
