@@ -18,6 +18,7 @@ class OauthsController < ApplicationController
       reset_session
       auto_login(@user)
       redirect_to root_path, success: t('.success')
+      UserMailer.with(to: @user.email, name: @user.name).welcome.deliver_now
     end
   end
 
