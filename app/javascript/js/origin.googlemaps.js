@@ -3,6 +3,7 @@ document.addEventListener("turbolinks:load", window.initMap = function() {
   const lng = gon.longitude;
   const name = gon.campsite_name;
   const address = gon.address;
+  const info = name + address;
   let map;
 
   // 地図を生成して表示
@@ -26,18 +27,31 @@ document.addEventListener("turbolinks:load", window.initMap = function() {
       infowindow.open(map, marker);
     });
   } else {
-    // 詳細案内ページの地図を生成して表示
+    // 周辺案内ページの地図を生成して表示
     let latlng = new google.maps.LatLng( lat, lng );
     map = new google.maps.Map(document.getElementById("gmap"), {
       zoom: 14,
       center: latlng,
       mapTypeId: "roadmap"
     });
-      new google.maps.Marker({
+
+    let marker = new google.maps.Marker({
       map: map,
       position: latlng,
-      title: name
+      title: name,address
     });
+
+    // 情報窓の表示
+    let infoWindow = new google.maps.InfoWindow({
+      content: name
+    });
+    infoWindow.open(map, marker);
+
+    // マーカーのクリック時にも情報窓を表示する
+    marker.addListener("click", function(){
+      infoWindow.open(map, marker);
+    });
+
 
   let directionsService = new google.maps.DirectionsService(); // DirectionsService のオブジェクトを生成
   let directionsRenderer = new google.maps.DirectionsRenderer(); // DirectionsRenderer のオブジェクトを生成
@@ -50,6 +64,7 @@ document.addEventListener("turbolinks:load", window.initMap = function() {
   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(locationButton);
   // 位置情報取得ボタンクリックで現在地取得を行い、経路探索を行う
   locationButton.addEventListener("click", function (event) {
+    document.getElementById('msg').innerHTML = "計算中です...";
       event.preventDefault();
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
