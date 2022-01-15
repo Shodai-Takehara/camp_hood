@@ -53,9 +53,9 @@
                     <th scope="row"><i class="fas fa-phone"></i> <%= t '.phone' %></th>
                     <td class="link-color"><a href="tel:"><%= @campsite.phone %></a></td>
                 </tr>
-                <tr>
+                <tr style="white-space: nowrap;">
                     <th scope="row"><i class="fas fa-globe"></i> <%= t '.contact_link' %></th>
-                    <td class="link-color" style="word-wrap:break-word;"><%= text_url_to_link(h(@campsite.contact_link)).html_safe %></td>
+                    <td class="link-color"><%= text_url_to_link(@campsite.contact_link).html_safe %></td>
                 </tr>
             </tbody>
           </table>

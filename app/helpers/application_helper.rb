@@ -31,16 +31,6 @@ module ApplicationHelper
     end
   end
 
-  # # ogp画像の設定
-  # def og_image(page_image = '')
-  #   base_image = "https://camp-hood.s3.ap-northeast-1.amazonaws.com/uploads/ogp/ogp_image.png"
-  #   if page_image.empty?
-  #     base_image
-  #   else
-  #     page_image
-  #   end
-  # end
-
   # meta-tags設定
   def default_meta_tags
     {
@@ -71,10 +61,4 @@ module ApplicationHelper
       }
     }
   end
-
-  # def campsite_count
-  #   Campsite.all.ids.count
-  # end
-  # h6 class="mt-4 mb-3"><%= "無料キャンプ場は全国に#{campsite_count}件あります" %>/h6>
-
 end

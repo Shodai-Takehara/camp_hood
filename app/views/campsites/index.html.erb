@@ -1,9 +1,10 @@
 <% set_meta_tags title: 'キャンプ場一覧ページ', description: "全国の無料キャンプ場を検索できます。お気に入りのキャンプ場を見つけてください。" %>
 <% content_for(:title, t('.title')) %>
 <% breadcrumb_pagination %>
-<div class="container px-4 px-lg-5 footerFixed">
+<div class="container px-4 footerFixed">
   <div class="row">
-    <div class="mt-5 col-12">
+  <h6 class="search-result"><%= "該当する無料キャンプ場は #{@count} 件です" %></h6>
+    <div class="mt-4 col-12">
       <%= render 'shared/search_form_index', url: campsites_path, search: @search %>
     </div>
     <% if @campsites.present? %>
