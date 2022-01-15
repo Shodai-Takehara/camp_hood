@@ -9,6 +9,7 @@ class CampsitesController < ApplicationController
   def index
     @search = Campsite.ransack(params[:q])
     @campsites = @search.result(distinc: true).page(params[:page])
+    @count = @campsites.total_count
   end
 
   def show; end

@@ -1,8 +1,14 @@
 h2 {
   font-weight: bold !important;
-  font-family: sans-serif;
+  font-family: serif;
   // color: #f8fcfb;
   color: #fff;
+}
+
+@media screen and (max-width:450px) {
+  .top-inner-text h2 {
+    font-size: 0.9em;
+  }
 }
 
 .top-wrapper {

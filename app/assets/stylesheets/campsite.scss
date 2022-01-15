@@ -181,3 +181,16 @@
   color: #333;
   text-decoration: none;
 }
+
+.search-result {
+  margin-top: 60px;
+  padding-left: 30px;
+}
+
+@media screen and (max-width:599px) {
+  .search-result {
+    margin-top: 50px;
+    padding-left: 30px;
+    font-size: 0.8em;
+  }
+}

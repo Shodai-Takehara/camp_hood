@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       auto_login(@user)
       redirect_to root_path, success: t('.success')
-      UserMailer.welcome(@user).deliver_now
+      UserMailer.with(to: @user.email, name: @user.name).welcome.deliver_now
     else
       flash.now[:danger] = t('.fail')
       render :new

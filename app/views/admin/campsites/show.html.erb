@@ -33,6 +33,10 @@
           <td><%= @campsite.access %></td>
         </tr>
         <tr>
+          <th scope="row"><%= Campsite.human_attribute_name(:period) %></th>
+          <td><%= @campsite.period %></td>
+        </tr>
+        <tr>
           <th scope="row"><%= Campsite.human_attribute_name(:description) %></th>
           <td><%= @campsite.description %></td>
         </tr>
@@ -48,7 +52,7 @@
           <th scope="row"><%= Campsite.human_attribute_name(:phone) %></th>
           <td><%= @campsite.phone %></td>
         </tr>
-        <tr>
+        <tr style="white-space: nowrap;">
           <th scope="row"><%= Campsite.human_attribute_name(:contact_link) %></th>
           <td><%= @campsite.contact_link %></td>
         </tr>

@@ -38,6 +38,12 @@
   padding: 4px;
 }
 
+@media screen and (max-width:600px) {
+  .custom-button {
+    font-size: 0.8rem;
+  }
+}
+
 .custom-button:hover {
   color: #333333;
   text-decoration: none;

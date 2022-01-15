@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 20 }
   validates :email, uniqueness: true, presence: true
+  # uniqueness: { case_sensitive: true }とすると
+  # RspecでUniqueness validator will no longer enforce case sensitive comparison in Rails 6.1警告がでない
   validates :reset_password_token, uniqueness: true, allow_nil: true
 
   enum role: { general: 0, admin: 1 }
