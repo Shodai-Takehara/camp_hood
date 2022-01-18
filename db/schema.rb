@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_07_162741) do
+ActiveRecord::Schema.define(version: 2022_01_18_152412) do
 
   create_table "authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(version: 2021_12_07_162741) do
     t.float "longitude"
   end
 
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "campsite_id", null: false
+    t.text "content"
+    t.integer "score"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["campsite_id"], name: "index_reviews_on_campsite_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", null: false
     t.string "crypted_password"
@@ -69,4 +80,6 @@ ActiveRecord::Schema.define(version: 2021_12_07_162741) do
 
   add_foreign_key "bookmarks", "campsites"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "reviews", "campsites"
+  add_foreign_key "reviews", "users"
 end

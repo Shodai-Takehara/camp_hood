@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     member do
       get :guidance
     end
+    resources :reviews, only: %i[index create]
   end
   resources :bookmarks, only: %i[create destroy]
 
