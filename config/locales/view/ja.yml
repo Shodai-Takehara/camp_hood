@@ -14,6 +14,7 @@ ja:
     new: '新規作成'
     users_new: 'ご登録ありがとうございます。'
     quit: '退会する'
+    post: '投稿'
 
     message:
       require_login: 'ログインしてください'
@@ -28,6 +29,7 @@ ja:
       not_authorized: '権限がありません'
       logout: 'ログアウトしますか？'
       quit: '退会するとデータは全て削除されます。退会しますか？'
+      fail: 'に失敗しました'
 
   users:
     new:
@@ -78,6 +80,7 @@ ja:
       description: "施設情報"
       phone: "電話番号"
       contact_link: "問合わせ先"
+
     mypage:
       title: "マイページ"
     guidance:
@@ -97,6 +100,10 @@ ja:
       success: 'パスワードを更新しました'
       fail: 'パスワードの更新に失敗しました'
 
+  reviews:
+    create:
+      success: 'レビューを投稿しました'
+      fail: 'レビュー投稿に失敗しました'
 
   views:
     pagination:

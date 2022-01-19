@@ -35,6 +35,10 @@ ja:
         longitude: '経度'
         image: 'キャンプ場画像'
 
+      review:
+        content: 'レビュー内容'
+        score: '★評価'
+
   attributes:
     created_at: '作成日'
     updated_at: '更新日'

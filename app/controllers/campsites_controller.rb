@@ -12,7 +12,9 @@ class CampsitesController < ApplicationController
     @count = @campsites.total_count
   end
 
-  def show; end
+  def show
+    @review = Review.new
+  end
 
   def mypage
     @search = current_user.bookmark_campsites.ransack(params[:q])

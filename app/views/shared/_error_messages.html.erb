@@ -2,7 +2,7 @@
   <div id="error_messages" class="alert alert-danger">
     <ul class="mb-0">
       <% object.errors.full_messages.each do |msg| %>
-        <li><%= msg %><button type="button" class="close" data-dismiss="alert">&times;</button></li>
+        <li style="list-style: none;"><%= msg %><button type="button" class="close" data-dismiss="alert">&times;</button></li>
       <% end %>
     </ul>
   </div>

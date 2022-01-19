@@ -13,7 +13,7 @@ crumb :campsites_pagination do |page|
 end
 
 crumb :campsite do
-  campsite = Campsite.find(params[:id])
+  campsite = Campsite.find(params[:id], params[:campsite_id])
   link "&nbsp;#{campsite.name}の詳細&nbsp;".html_safe,  campsite_path(campsite)
   parent :campsites
 end
