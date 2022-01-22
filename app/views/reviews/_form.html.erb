@@ -1,0 +1,26 @@
+<div class="container px-4 text-center bg-gray mt-4">
+  <div class="row">
+    <h6 class="mt-4 mb-3 mx-auto"><i class="fas fa-comments"></i> レビューを書く</h6>
+    <div class="rating-box mt-3">
+      <%= form_with model: review, url: campsite_reviews_path(campsite), local: true do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+        <div class="main-rating">
+          <div class="ratings mb-3">
+            <span class="far fa-star" id="star"></span>
+            <span class="far fa-star" id="star"></span>
+            <span class="far fa-star" id="star"></span>
+            <span class="far fa-star" id="star"></span>
+            <span class="far fa-star" id="star"></span>
+          </div>
+          <div class="ml-3 rating-value-display"><span id="rating-value-display">0</span>&nbsp;/ 5</div>
+        </div>
+        <%= f.hidden_field :campsite_id, value: campsite.id %>
+        <%= f.hidden_field :score, id: "rating-value" %>
+        <%= f.text_area :content, class: "form-control", size: "150x5" %>
+        <% if !logged_in? %>
+          <%= f.submit t('defaults.post'), class: "btn btn-success mt-3 mb-4 px-3", data: { confirm: t('defaults.message.require_login') } %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

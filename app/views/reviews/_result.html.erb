@@ -1,0 +1,48 @@
+<div class="container col-12">
+  <% if @reviews.present? %>
+    <div class="average-score mt-5">
+      <div class="star-rating mb-2">
+        <div class="star-rating-front" style="width: <%= @campsite.review_score_percentage %>%;">★★★★★</div>
+        <div class="star-rating-back">★★★★★</div>
+      </div>
+      <div class="average-score-display ml-3 mb-3 pt-2">
+        <%= @campsite.avg_score %>点（<%= @campsite.reviews.count %>件）
+      </div>
+    </div>
+    <% @reviews.each do |review| %>
+    <div class="balloon-color left mt-3">
+      <figure class="icon-color"><%= image_tag review.user.avatar.url, class: "rounded-circle mb-2 ml-1", size: "50x50" %>
+        <figcaption class="name-color text-center"><%= review.user.name %></figcaption>
+      </figure>
+      <div class="chatting-color">
+        <p class="text-color">
+        <div class="star-rating">
+        <% if review.score == 5 %>
+          <div class="star-rating-front" style="width: 100%;">★★★★★</div>
+        <% elsif review.score == 4 %>
+          <div class="star-rating-front" style="width: 80%;">★★★★★</div>
+        <% elsif review.score == 3 %>
+          <div class="star-rating-front" style="width: 60%;">★★★★★</div>
+        <% elsif review.score == 2 %>
+          <div class="star-rating-front" style="width: 40%;">★★★★★</div>
+        <% else %>
+          <div class="star-rating-front" style="width: 20%;">★★★★★</div>
+        <% end %>
+          <div class="star-rating-back" style="font-size: 25px;">★★★★★</div>
+        </div></p>
+        <p class="text-color"><%= review.content %></p>
+        <p class="text-color"><%= review.created_at.strftime('%F') %>
+        <% if logged_in? && current_user.own?(review) %>
+          <%= link_to campsite_review_path(review.campsite.id, review.id), method: :delete,
+              data: { confirm: t('defaults.message.delete_confirm') }, class: "text-muted ml-3" do %>
+              <i class="far fa-trash-alt"></i>
+          <% end %>
+        <% end %>
+        </p>
+      </div>
+    </div>
+    <% end %>
+  <% else %>
+    <h6 class="mt-5">まだレビューはありません。</h6>
+  <% end %>
+</div>

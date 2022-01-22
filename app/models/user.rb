@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :authentications, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :bookmark_campsites, through: :bookmarks, source: :campsite
+  has_many :reviews, dependent: :destroy
 
   accepts_nested_attributes_for :authentications
   mount_uploader :avatar, AvatarUploader
@@ -29,6 +30,10 @@ class User < ApplicationRecord
 
   def bookmark?(campsite)
     bookmark_campsites.include?(campsite)
+  end
+
+  def own?(object)
+    id == object.user_id
   end
 
 end

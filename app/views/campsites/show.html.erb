@@ -1,14 +1,23 @@
 <% set_meta_tags title: 'キャンプ場詳細ページ', description: "#{ @campsite.name }の詳細です" %>
 <% content_for(:title, t('.title')) %>
 <% breadcrumb :campsite, @campsite %>
-<div class="container mt-4 footerFixed">
+<div class="container mt-5 footerFixed">
   <div class="row">
     <div class="container backimage mb-5 text-center text-white">
       <div class="likebutton">
-        <%= render 'bookmark_button', campsite: @campsite %>
+        <%= render 'campsites/bookmark_button', campsite: @campsite %>
       </div>
-      <h3 class="mt-5 mb-3"><%= @campsite.name %></h3>
+      <h3 class="mt-4 mb-3"><%= @campsite.name %></h3>
       <h5><%= @campsite.prefecture.name %></h5>
+      <div class="average-score justify-content-center">
+        <div class="star-rating mb-2">
+          <div class="star-rating-front" style="width: <%= @campsite.review_score_percentage %>%">★★★★★</div>
+          <div class="star-rating-back">★★★★★</div>
+        </div>
+        <div class="average-score-display ml-3 pt-2">
+          <%= @campsite.avg_score %>点（<%= @campsite.reviews.count %>件のレビュー）
+        </div>
+      </div>
     </div>
     <div class="container">
       <div class="row">
@@ -62,7 +71,7 @@
         </div>
         <div class="col-lg-5">
           <div class="text-center mb-5 mt-4">
-            <%= link_to "この無料キャンプ場の周辺案内を行う", guidance_campsite_path, class: 'btn-gradient-3d-orange w-100' %>
+            <%= link_to "この無料キャンプ場の周辺案内を行う", guidance_campsite_path(@campsite), class: 'btn-gradient-3d-orange w-100' %>
           </div>
           <div class="d-flex justify-content-around mb-5">
             <%= link_to "https://twitter.com/share?url=#{request.original_url}&hashtags=キャンプ,無料キャンプ場,#{@campsite.prefecture.name}の無料キャンプ場,#{@campsite.name}",
@@ -80,5 +89,7 @@
         </div>
       </div>
     </div>
+    <%= render 'reviews/form', review: @review, campsite: @campsite %>
   </div>
+    <%= render 'reviews/result' %>
 </div>

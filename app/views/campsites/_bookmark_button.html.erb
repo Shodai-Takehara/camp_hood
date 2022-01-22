@@ -1,7 +1,7 @@
 <% if !logged_in? %>
   <%= render 'bookmark', campsite: campsite %>
 <% elsif current_user.bookmark?(campsite) %>
-  <%= render 'unbookmark', campsite: campsite %>
+  <%= render 'campsites/unbookmark', campsite: campsite %>
 <% else %>
-  <%= render 'bookmark', campsite: campsite %>
+  <%= render 'campsites/bookmark', campsite: campsite %>
 <% end %>
