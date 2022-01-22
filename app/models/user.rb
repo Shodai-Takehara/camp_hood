@@ -32,5 +32,9 @@ class User < ApplicationRecord
     bookmark_campsites.include?(campsite)
   end
 
+  def own?(object)
+    id == object.user_id
+  end
+
 end
 

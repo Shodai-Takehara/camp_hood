@@ -104,6 +104,8 @@ ja:
     create:
       success: 'レビューを投稿しました'
       fail: 'レビュー投稿に失敗しました'
+    destroy:
+      success: '投稿したレビューを削除しました'
 
   views:
     pagination:

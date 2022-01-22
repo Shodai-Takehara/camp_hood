@@ -7,8 +7,17 @@
       <div class="likebutton">
         <%= render 'campsites/bookmark_button', campsite: @campsite %>
       </div>
-      <h3 class="mt-5 mb-3"><%= @campsite.name %></h3>
+      <h3 class="mt-4 mb-3"><%= @campsite.name %></h3>
       <h5><%= @campsite.prefecture.name %></h5>
+      <div class="average-score justify-content-center">
+        <div class="star-rating mb-2">
+          <div class="star-rating-front" style="width: <%= @campsite.review_score_percentage %>%">★★★★★</div>
+          <div class="star-rating-back">★★★★★</div>
+        </div>
+        <div class="average-score-display ml-3 pt-2">
+          <%= @campsite.avg_score %>点（<%= @campsite.reviews.count %>件のレビュー）
+        </div>
+      </div>
     </div>
     <div class="container">
       <div class="row">
@@ -82,4 +91,5 @@
     </div>
     <%= render 'reviews/form', review: @review, campsite: @campsite %>
   </div>
+    <%= render 'reviews/result' %>
 </div>

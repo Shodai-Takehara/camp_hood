@@ -14,6 +14,7 @@ class CampsitesController < ApplicationController
 
   def show
     @review = Review.new
+    @reviews = @campsite.reviews.order(created_at: :desc)
   end
 
   def mypage

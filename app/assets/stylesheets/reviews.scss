@@ -16,3 +16,61 @@
 .rating-value-display {
   font-size: 19px;
 }
+
+// 星のデザイン
+.star-rating {
+  position: relative;
+  width: 5em;
+  height: 1em;
+  font-size: 25px;
+}
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+}
+.star-rating-back {
+  color: #ccc;
+}
+
+.average-score {
+  display: flex;
+}
+.average-score-display {
+  font-size: 16px;
+}
+
+// コメントのデザイン
+.balloon-color {
+  display: flex;
+  flex-wrap: wrap;
+  }
+  .balloon-color.left {
+  flex-direction: row; /* 左から右に並べる */
+  }
+  .left .chatting-color {
+  position: relative;
+  // display: inline-block; /* 吹き出し文字幅に合わせます */
+  margin: 10px 0px 20px 20px;
+  padding: 0px 20px;
+  background: #f2f2f2;
+  text-align: left;
+  border-radius: 15px;
+  width: 88%;
+  }
+  .left .chatting-color::after {
+  content: "";
+  border: 15px solid transparent;
+  border-top-color: #f2f2f2;
+  position: absolute;
+  top: 15px; //三角部分の高さ
+  left: -15px; //三角部分の位置
+  }
+
+  @media screen and (max-width:768px) {
+    .left .chatting-color {
+      width: 58vw;
+      }
+  }
