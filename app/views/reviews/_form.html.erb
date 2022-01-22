@@ -19,6 +19,8 @@
         <%= f.text_area :content, class: "form-control", size: "150x5" %>
         <% if !logged_in? %>
           <%= f.submit t('defaults.post'), class: "btn btn-success mt-3 mb-4 px-3", data: { confirm: t('defaults.message.require_login') } %>
+        <% else %>
+          <%= f.submit t('defaults.post'), class: "btn btn-success mt-3 mb-4 px-3" %>
         <% end %>
       <% end %>
     </div>
