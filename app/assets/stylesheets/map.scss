@@ -1,5 +1,11 @@
 #gmap {
-  height: 500px;
+  height: 400px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+#pano {
+  height: 400px;
   width: 100%;
   border-radius: 8px;
 }
@@ -36,6 +42,15 @@
   border: 3px solid #a0c4d3;
   border-radius: 10px;
   padding: 4px;
+}
+
+.custom-button-street {
+  color: #2285b1;
+  font-size: 1em;
+  font-weight: 700;
+  border: 3px solid #a0c4d3;
+  border-radius: 10px;
+  padding: 4px 15px;
 }
 
 @media screen and (max-width:600px) {

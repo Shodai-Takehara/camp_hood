@@ -9,4 +9,5 @@ import "../js/openweather_map.js";
 import "../js/origin.googlemaps.js";
 import "../js/getplaces.js";
 import "../js/reviews.js";
+import "../js/streetview.js";
 

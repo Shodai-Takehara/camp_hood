@@ -3,7 +3,6 @@ document.addEventListener("turbolinks:load", window.initMap = function() {
   const lng = gon.longitude;
   const name = gon.campsite_name;
   const address = gon.address;
-  const info = name + address;
   let map;
 
   // 地図を生成して表示
@@ -62,6 +61,7 @@ document.addEventListener("turbolinks:load", window.initMap = function() {
   locationButton.textContent = "現在地からキャンプ場への道のりを見る";
   locationButton.classList.add("custom-button");
   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(locationButton);
+
   // 位置情報取得ボタンクリックで現在地取得を行い、経路探索を行う
   locationButton.addEventListener("click", function (event) {
     document.getElementById('msg').innerHTML = "計算中です...";
