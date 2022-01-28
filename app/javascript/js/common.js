@@ -26,3 +26,12 @@ window.addEventListener("scroll", function () {
 $(function () {
   setTimeout("$('#flash').fadeOut('slow')", 3000);
 });
+
+// guidanceページ検索結果画面ボタンクリック後にMapまで移動する
+window.scrollWindow = function () {
+  window.scrollTo({
+    top: 60,
+    left: 0,
+    behavior: 'smooth'
+  });
+}

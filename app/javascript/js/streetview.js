@@ -6,6 +6,7 @@ window.streetView = function() {
   let latlng = new google.maps.LatLng(lat, lng);
   let obj = document.getElementById("panorama");
   obj.id = "pano";
+  let button = document.getElementById("custom-button-street");
 
   // Mapインスタンス作成
   let map = new google.maps.Map(
@@ -40,5 +41,6 @@ window.streetView = function() {
       },
     }
   );
+  button.remove();
   map.setStreetView(panorama, marker);
 }
