@@ -3,7 +3,7 @@
 <% breadcrumb_pagination %>
 <div class="container px-4 footerFixed">
   <div class="row">
-  <h6 class="search-result"><%= "該当する無料キャンプ場は #{@count} 件です" %></h6>
+  <h6 class="search-result">該当する無料キャンプ場は <span style="color: red; font-weight: 800;"><%= @count %></span> 件です</h6>
     <div class="mt-4 col-12">
       <%= render 'shared/search_form_index', url: campsites_path, search: @search %>
     </div>

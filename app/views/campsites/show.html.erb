@@ -25,7 +25,7 @@
           <table class="table table-responsive">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col" style="width:25%"><%= t '.info' %></th>
+                    <th scope="col" style="width:25%; text-align:center;"><%= t '.info' %></th>
                 </tr>
             </thead>
             <tbody>
@@ -90,6 +90,7 @@
       </div>
     </div>
     <%= render 'reviews/form', review: @review, campsite: @campsite %>
+    <hr width="100%">
   </div>
     <%= render 'reviews/result' %>
 </div>
