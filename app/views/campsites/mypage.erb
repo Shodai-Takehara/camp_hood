@@ -1,4 +1,4 @@
-<% set_meta_tags title: 'マイページ', description: "ユーザー専用のページです" %>
+<% set_meta_tags title: 'マイページ', description: "#{current_user.name}様専用のページです" %>
 <% content_for(:title, t('.title')) %>
 <% breadcrumb :mypage, @user %>
 <div class="container">
@@ -15,18 +15,14 @@
     </div>
   </div>
 </div>
-  <div class="container col-lg-8">
-    <h4 class="mycamp mt-5 mb-5">行きたいキャンプ場一覧</h4>
-      <% if @bookmark_campsites.present? %>
-        <div class="mt-5 col-12">
-          <%= render 'shared/search_form_mypage', url: mypage_campsites_path, search: @search %>
-        </div>
-        <div class="row">
-        <%= render partial: "campsites/campsite", collection: @bookmark_campsites %>
-      <% else %>
-        <h5 class="mt-4 mb-4">行きたいキャンプ場がまだありません。</h5>
-      <% end %>
-    </div>
-      <%= paginate @bookmark_campsites %>
+<div class="container col-lg-8">
+  <h4 class="mycamp mt-5 mb-5">行きたいキャンプ場一覧</h4>
+  <% if @bookmark_campsites.present? %>
+  <div class="row">
+    <%= render partial: "campsites/campsite", collection: @bookmark_campsites %>
+  <% else %>
+    <h5 class="mt-4 mb-4">行きたいキャンプ場がまだありません。</h5>
+  <% end %>
   </div>
+    <%#<%= paginate @bookmark_campsites %>
 </div>
