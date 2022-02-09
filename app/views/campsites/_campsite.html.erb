@@ -5,8 +5,13 @@
         <%= link_to campsite_path(campsite.id), class: "card__title fas fa-campground" do %>
           <%= campsite.name %>
         <% end %>
-        <figure class="card__thumbnail">
+        <figure class="card__thumbnail mx-auto d-block">
+        <% results = "http://maps.google.com/maps/api/staticmap?center=#{campsite.name}&scale=1&size=450x250&zoom=13&markers=size:mid|color:red|label:A&maptype=hybrid&sensor=true&key=#{Rails.application.credentials.google[:GOOGLE_MAP_API_KEY]}" %>
+        <% if results.present? %>
+          <%= image_tag results %>
+        <% else %>
           <%= image_tag campsite.image.url, alt: "キャンプ場の写真",  class: "card__image rounded" %>
+        <% end %>
         </figure>
       </div>
       <div class="card__body">
