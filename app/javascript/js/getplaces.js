@@ -117,12 +117,12 @@ function displayResults(results, status, pagination) {
 
       // クリック時にMapにマーカー表示するようにボタンタグを作成
       resultHTML += "<li style=\"list-style: none;\">" +
-                  "<button class=\"results_button\"" +
+                  "<button id=\"results_button\" class=\"results_button\"" +
                   " onclick=\"createMarker(" +
                   "'" + place.name + "'," +
                   "'" + place.vicinity + "'," +
                   place.geometry.location.lat() + "," +
-                  place.geometry.location.lng() + ")\">" +
+                  place.geometry.location.lng() + "); scrollWindow();\">" +
                   content +
                   "</button>" +
                   "</li>";

@@ -1,7 +1,7 @@
 <% set_meta_tags title: 'キャンプ場詳細ページ', description: "#{ @campsite.name }の詳細です" %>
 <% content_for(:title, t('.title')) %>
 <% breadcrumb :campsite, @campsite %>
-<div class="container mt-5 footerFixed">
+<div class="container mt-4 footerFixed">
   <div class="row">
     <div class="container backimage mb-5 text-center text-white">
       <div class="likebutton">
@@ -25,7 +25,7 @@
           <table class="table table-responsive">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col" style="width:25%"><%= t '.info' %></th>
+                    <th scope="col" style="width:25%; text-align:center;"><%= t '.info' %></th>
                 </tr>
             </thead>
             <tbody>
@@ -90,6 +90,7 @@
       </div>
     </div>
     <%= render 'reviews/form', review: @review, campsite: @campsite %>
+    <hr width="100%">
   </div>
     <%= render 'reviews/result' %>
 </div>

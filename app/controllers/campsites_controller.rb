@@ -18,8 +18,7 @@ class CampsitesController < ApplicationController
   end
 
   def mypage
-    @search = current_user.bookmark_campsites.ransack(params[:q])
-    @bookmark_campsites = @search.result(distinc: true).order(created_at: :asc).page(params[:page]).per(9)
+    @bookmark_campsites = current_user.bookmarks.order(created_at: :desc).map{ |bookmark| bookmark.campsite }
   end
 
   def guidance; end
