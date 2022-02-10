@@ -6,9 +6,7 @@ class TopPageController < ApplicationController
     @campsites = @search.result(distinc: true).page(params[:page])
   end
 
-
   def terms_of_service; end
 
   def privacy_policy; end
-
 end

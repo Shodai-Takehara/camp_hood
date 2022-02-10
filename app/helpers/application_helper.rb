@@ -1,21 +1,21 @@
 module ApplicationHelper
-  require "uri"
+  require 'uri'
 
-  def page_title(page_title = '', admin = false)
+  def page_title(page_title = '', admin: false)
     base_title =
-    if admin
-      '【管理画面】'
-    else
-      'CAMPHOOD'
-    end
+      if admin
+        '【管理画面】'
+      else
+        'CAMPHOOD'
+      end
     page_title.empty? ? base_title : page_title + ' | ' + base_title
   end
 
   # URLテキストにリンクを付与する
   def text_url_to_link(text)
-    URI.extract(text, ['http','https'] ).uniq.each do |url|
-      sub_text = ""
-      sub_text << "<a href=" << url << " target=\"_blank\">" << url << "</a>"
+    URI.extract(text, %w[http https]).uniq.each do |url|
+      sub_text = ''
+      sub_text << '<a href=' << url << ' target="_blank">' << url << '</a>'
 
       text.gsub!(url, sub_text)
     end
@@ -38,7 +38,7 @@ module ApplicationHelper
       title: '無料キャンプ場をもっと身近に利用しよう',
       charset: 'utf-8',
       description: '全国の無料キャンプ場を検索できて、周辺施設や天気を案内するサービス',
-      keywords:    "CAMP,無料キャンプ場,BBQ,キャンプ,キャンプ飯",
+      keywords: 'CAMP,無料キャンプ場,BBQ,キャンプ,キャンプ飯',
       canonical: request.original_url, # 優先されるurl
       # noindex: ! Rails.env.production?, # 本番環境以外はnoindex
       icon: { href: image_url('favicon.ico') },
@@ -49,15 +49,15 @@ module ApplicationHelper
         type: 'website',
         url: request.original_url,
         image: image_url('ogp_image.png'),
-        locale: 'ja_JP',
+        locale: 'ja_JP'
       },
       twitter: {
         card: 'summary_large_image',
         site: '@42_ogi',
-        image: image_url('ogp_image.png'),
+        image: image_url('ogp_image.png')
       },
       fb: {
-        app_id: Rails.application.credentials.dig(:sorcery, :facebook, :key),
+        app_id: Rails.application.credentials.dig(:sorcery, :facebook, :key)
       }
     }
   end

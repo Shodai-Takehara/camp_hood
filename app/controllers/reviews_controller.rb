@@ -1,24 +1,22 @@
 class ReviewsController < ApplicationController
-  skip_before_action :require_login, only: %i[new create]
+  skip_before_action :require_login, only: %i[create]
   before_action :set_campsite, only: %i[index create destroy]
 
   def index
     @review = Review.new
     @reviews = @campsite.reviews.order(created_at: :desc)
-    render template: "campsites/show"
+    render template: 'campsites/show'
   end
 
   def create
-    begin
-      @review = current_user.reviews.build(review_params)
-      if @review.save
-        redirect_to campsite_path(@review.campsite), success: t('.success')
-      else
-        render template: "campsites/show", danger: t('.fail')
-      end
-    rescue
-      redirect_to campsite_path(@campsite), danger: t('.fail')
+    @review = current_user.reviews.build(review_params)
+    if @review.save
+      redirect_to campsite_path(@review.campsite), success: t('.success')
+    else
+      render template: 'campsites/show', danger: t('.fail')
     end
+  rescue StandardError
+    redirect_to campsite_path(@campsite), danger: t('.fail')
   end
 
   def destroy
