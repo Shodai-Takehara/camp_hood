@@ -1,0 +1,62 @@
+inherit_from: .rubocop_todo.yml
+
+# 追加した規約ファイル読込
+require:
+  - rubocop-rails
+
+AllCops:
+  # Rubyバージョン指定
+  TargetRubyVersion: 2.6.8
+  # 除外
+  Exclude:
+    - 'config.ru'
+    - 'bin/**'
+    - 'lib/**'
+    - 'lib/tasks/**'
+    - 'spec/rails_helper.rb'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'node_modules/node-sass/src/libsass/**/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+
+# RSpecの"Block has too many lines."という警告を無視
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/AbcSize:
+  Max: 20,
+  Exclude:
+  - 'app/controllers/campsites_controller.rb'
+  - 'app/controllers/oauths_controller.rb'
+
+# メソッド
+Metrics/MethodLength:
+  Max: 20,
+  Exclude:
+  - 'app/helpers/application_helper.rb'
+  - 'app/controllers/campsites_controller.rb'
+
+# ガード節4行以上の場合チェック
+GuardClause:
+  MinBodyLength: 4
+
+IfUnlessModifier:
+  Enabled: false
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# クラスのコメント必須を無視
+Documentation:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+  Enabled: false
+
+# 文字リテラルのイミュータブル宣言を無視（freezeになるのはRuby3以降）
+Style/FrozenStringLiteralComment:
+  Enabled: false

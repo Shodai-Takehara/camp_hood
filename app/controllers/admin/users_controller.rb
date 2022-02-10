@@ -33,6 +33,4 @@ class Admin::UsersController < Admin::BaseController
   def update_params
     params.require(:user).permit(:email, :name, :avatar, :avatar_cache, :role)
   end
-
-
 end

@@ -18,7 +18,6 @@ class Admin::CampsitesController < Admin::BaseController
       flash.now[:danger] = t('.fail')
       render :new
     end
-
   end
 
   def show; end
@@ -27,7 +26,8 @@ class Admin::CampsitesController < Admin::BaseController
 
   def update
     if @campsite.update(campsaite_params)
-      redirect_to admin_campsite_path(@campsite), success: t('defaults.message.updated', item: Campsite.model_name.human)
+      redirect_to admin_campsite_path(@campsite),
+                  success: t('defaults.message.updated', item: Campsite.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_updated', item: Campsite.model_name.human)
       render :edit
@@ -36,15 +36,17 @@ class Admin::CampsitesController < Admin::BaseController
 
   def destroy
     if @campsite.destroy!
-      redirect_to admin_campsites_path(@campsites), success: t('defaults.message.deleted', item: Campsite.model_name.human)
+      redirect_to admin_campsites_path(@campsites),
+                  success: t('defaults.message.deleted', item: Campsite.model_name.human)
     end
   end
 
   private
 
   def campsaite_params
-    params.require(:campsite).permit(:name, :address, :prefecture_code, :access, :description, :period,
-    :checkin, :checkout, :phone, :contact_link, :latitude, :longitude, :image, :image_cache)
+    params.require(:campsite).permit(:name, :address, :prefecture_code, :access,
+                                     :description, :period, :checkin, :checkout, :phone,
+                                     :contact_link, :latitude, :longitude, :image, :image_cache)
   end
 
   def set_campsite

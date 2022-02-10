@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Campsites", type: :system do
+RSpec.describe 'Campsites', type: :system do
   describe 'キャンプ場一覧画面' do
     it 'トップ > キャンプ場一覧というぱんくずが表示されていること' do
       visit campsites_path
@@ -45,7 +45,7 @@ RSpec.describe "Campsites", type: :system do
       it 'ログアウト処理が成功する' do
         login_as(user)
         click_link 'ログアウト'
-        expect(page.driver.browser.switch_to.alert.text).to eq "ログアウトしますか？"
+        expect(page.driver.browser.switch_to.alert.text).to eq 'ログアウトしますか？'
         page.driver.browser.switch_to.alert.accept
         expect(current_path).to eq(root_path)
         expect(page).to have_content 'ログアウトしました'
@@ -140,7 +140,7 @@ RSpec.describe "Campsites", type: :system do
       visit mypage_campsites_path
       click_link '編集する'
       click_on '退会する'
-      expect(page.driver.browser.switch_to.alert.text).to eq "退会するとデータは全て削除されます。退会しますか？"
+      expect(page.driver.browser.switch_to.alert.text).to eq '退会するとデータは全て削除されます。退会しますか？'
       page.driver.browser.switch_to.alert.accept
       expect(current_path).to eq(root_path)
       expect(page).to have_content('退会しました')

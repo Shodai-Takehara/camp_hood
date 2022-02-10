@@ -17,5 +17,4 @@ class UserSessionsController < ApplicationController
     logout
     redirect_back_or_to root_path, danger: t('.success')
   end
-
 end
