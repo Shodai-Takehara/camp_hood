@@ -64,7 +64,7 @@
                 </tr>
                 <tr style="white-space: nowrap;">
                     <th scope="row"><i class="fas fa-globe"></i> <%= t '.contact_link' %></th>
-                    <td class="link-color"><%= text_url_to_link(@campsite.contact_link).html_safe %></td>
+                    <td class="link-color"><%= text_url_to_link(h(@campsite.contact_link)).html_safe %></td>
                 </tr>
             </tbody>
           </table>
