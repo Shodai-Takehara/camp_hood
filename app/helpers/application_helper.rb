@@ -41,7 +41,11 @@ module ApplicationHelper
       keywords: 'CAMP,無料キャンプ場,BBQ,キャンプ,キャンプ飯',
       canonical: request.original_url, # 優先されるurl
       # noindex: ! Rails.env.production?, # 本番環境以外はnoindex
-      icon: { href: image_url('favicon.ico') },
+      icon: [
+        { href: image_url('favicon.ico') },
+        { href: image_url('apple-touch-icon.png'),
+          rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' }
+      ],
       og: {
         site_name: :site,
         title: :title,
