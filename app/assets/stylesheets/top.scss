@@ -2,7 +2,7 @@ h2 {
   font-weight: bold !important;
   font-family: serif;
   // color: #f8fcfb;
-  color: #fff;
+  color: #999;
 }
 
 @media screen and (max-width:450px) {
@@ -52,6 +52,10 @@ h2 {
   }
 }
 
+.navbar-color {
+  color: #333 !important;
+}
+
 // ヘッダーのデザイン
 header.scroll-nav {
   // 背景を白にする
@@ -61,7 +65,7 @@ header.scroll-nav {
 }
 
 // scroll-navクラスがヘッダーについたときに、ロゴとナビゲーションの文字を黒にする
-header.scroll-nav .logo,
+header.scroll-nav,
 header.scroll-nav .nav-link {
   color: #000 !important;
 }
